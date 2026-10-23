@@ -1,6 +1,8 @@
 # Verification scope
 
-Release: v1.0.0-beta.2
+Release: v1.0.0-beta.3
+
+beta.3 changes documentation, artwork, GitHub Pages and community files only; installer logic is identical to beta.2.
 
 Implemented automated checks:
 - Bash syntax for all shell files.

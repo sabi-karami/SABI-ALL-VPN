@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
-VERSION=v1.0.0-beta.2
+VERSION=v1.0.0-beta.3
 REPOSITORY=sabi-karami/SABI-ALL-VPN
 if [[ ${1:-} == --help ]]; then echo 'bootstrap.sh [--aws [AWS OPTIONS] | --resume | --noninteractive]'; exit; fi
 command -v curl >/dev/null || { echo 'Install curl first.'; exit 1; }

@@ -1,0 +1,28 @@
+name: ✨ پیشنهاد قابلیت / Feature request
+description: ایده‌ای برای بهتر شدن نصب‌کننده، پنل یا مستندات
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: چه مشکلی را حل می‌کند؟ / Problem
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: پیشنهاد شما / Proposal
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: جایگزین‌ها / Alternatives
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: محدوده / Scope
+      options:
+        - label: می‌دانم پروژه برای سرور اختصاصی Ubuntu 24.04 است و پنل read-only است. / I understand the project scope.
+          required: true

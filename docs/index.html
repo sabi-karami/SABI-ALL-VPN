@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SABI ALL VPN — یک دستور، سی کارت اتصال، یک پنل فارسی</title>
+<meta name="description" content="نصب‌کنندهٔ چندروشی VPN برای سرور اختصاصی Ubuntu 24.04 با پنل خصوصی فارسی و کلیک برای کپی. نسخهٔ آزمایشی.">
+<meta property="og:title" content="SABI ALL VPN">
+<meta property="og:description" content="یک دستور، سی کارت اتصال، یک پنل خصوصی فارسی">
+<meta name="theme-color" content="#142f2d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23244e43'/%3E%3Ccircle cx='32' cy='32' r='12' fill='none' stroke='%23d6e777' stroke-width='5'/%3E%3C/svg%3E">
+<style>
+@font-face{font-family:Vazir;src:url('assets/vazirmatn.woff2') format('woff2');font-weight:100 900;font-display:swap}
+:root{--ink:#142f2d;--green:#244e43;--lime:#d6e777;--paper:#f4f3ed;--white:#fffef9;--muted:#687570;--line:#d9dfd7;--orange:#aa5d25;--red:#9d3e33;--blue:#2b5f73;--olive:#6f7d2a;
+--girih:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Cg fill='none' stroke='%23d6e777' stroke-opacity='.08'%3E%3Cpath d='M36 10L62 36L36 62L10 36Z'/%3E%3Cpath d='M17.6 17.6H54.4V54.4H17.6Z'/%3E%3Ccircle cx='36' cy='36' r='11'/%3E%3C/g%3E%3C/svg%3E")}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.95 Vazir,Tahoma,sans-serif;color:var(--ink);background:var(--paper)}
+a{color:inherit}code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+header.hero{background:var(--girih),radial-gradient(circle at 18% 55%,rgba(214,231,119,.18),transparent 45%),var(--ink);color:var(--paper);padding:26px 0 90px;overflow:hidden;position:relative}
+nav.top{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;font-size:20px;text-decoration:none}
+.mark{width:42px;height:42px;border-radius:14px 14px 4px 14px;background:var(--lime);color:var(--green);display:grid;place-items:center;font-size:24px;font-weight:900}
+nav.top .links{display:flex;gap:6px;flex-wrap:wrap}nav.top .links a{text-decoration:none;font-size:14px;padding:6px 14px;border-radius:99px;color:#c9d6d0}nav.top .links a:hover{background:rgba(214,231,119,.12);color:var(--lime)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;margin-top:64px}
+.eyebrow{font:700 12px/1 ui-monospace,monospace;letter-spacing:3px;color:var(--lime);direction:ltr;text-align:right}
+h1{font-size:clamp(52px,8vw,104px);line-height:1;margin:18px 0 16px;font-weight:900;letter-spacing:-2px;direction:ltr;text-align:right}h1 em{font-style:normal;color:var(--lime)}
+.tag{font-size:clamp(20px,2.6vw,30px);font-weight:700;margin:0}.sub{color:#a9bbb4;margin:8px 0 26px}
+.chips{display:flex;gap:10px;flex-wrap:wrap}.chip{border:1px solid rgba(214,231,119,.45);color:var(--lime);border-radius:99px;padding:3px 16px;font-size:14px}.chip.beta{background:var(--lime);color:var(--green);font-weight:800;border-color:var(--lime)}.chip.ver{background:var(--orange);border-color:var(--orange);color:var(--white)}
+.orbit{container-type:inline-size;position:relative;aspect-ratio:1;max-width:420px;justify-self:center;width:100%}
+.orbit .ring{position:absolute;inset:var(--i);border:1px dashed rgba(214,231,119,.25);border-radius:50%;animation:spin var(--t) linear infinite}
+.orbit .ring i{position:absolute;width:14px;height:14px;border-radius:50%;border:2.5px solid var(--c);background:var(--ink);top:50%;left:50%;transform:rotate(var(--a)) translate(var(--r)) rotate(calc(-1*var(--a)));margin:-7px}
+.orbit .core{position:absolute;inset:39%;border-radius:22px 22px 6px 22px;background:var(--lime);color:var(--green);display:grid;place-items:center;font-size:44px;font-weight:900;box-shadow:0 0 0 0 rgba(214,231,119,.6);animation:pulse 3s ease-out infinite}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes pulse{to{box-shadow:0 0 0 46px rgba(214,231,119,0)}}
+.install{margin-top:-56px;position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.cmd{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:0 18px 40px -24px rgba(20,47,45,.45)}
+.cmd h2{margin:0;font-size:21px}.cmd p{margin:4px 0 14px;color:var(--muted);font-size:14px}
+.cmd .n{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:10px;background:var(--green);color:var(--lime);font-weight:900;margin-left:10px}
+.cmd.aws .n{background:var(--orange);color:var(--white)}
+.code{display:flex;align-items:center;gap:10px;background:var(--ink);color:var(--lime);border-radius:14px;padding:12px 14px;direction:ltr}
+.code code{flex:1;overflow-x:auto;white-space:nowrap;font-size:13px;scrollbar-width:thin}
+.copy{border:0;background:var(--lime);color:var(--green);border-radius:10px;padding:6px 14px;font:800 13px Vazir,sans-serif;cursor:pointer;flex:none}.copy.ok{background:var(--white)}
+.warn{margin-top:12px;font-size:13px;color:var(--red);background:#f6e7e2;border-radius:12px;padding:8px 12px}
+section{padding:84px 0 0}section h2.t{font-size:clamp(28px,4vw,42px);margin:0;font-weight:900}section .lead{color:var(--muted);margin:6px 0 32px}
+.groups{display:grid;gap:14px}.grp{display:grid;grid-template-columns:190px 1fr;gap:14px}
+.grp h3{margin:0;border-radius:18px;padding:16px 18px;color:var(--white);font-size:17px;display:flex;justify-content:space-between;align-items:flex-start}.grp h3 span{font-size:26px;line-height:1;opacity:.85}
+.grp ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px}
+.grp li{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:12px 16px;border-right:6px solid var(--c);display:flex;flex-direction:column;opacity:0;transform:translateY(8px);animation:rise .5s ease-out forwards;animation-delay:var(--d)}
+.grp li b{font-size:15px;text-align:right}.grp li code{font-size:12.5px;color:var(--c);text-align:right}
+.g-direct{--c:var(--green)}.g-cdn{--c:var(--orange)}.g-classic{--c:var(--blue)}.g-tools{--c:var(--olive)}.g-optional{--c:var(--red)}.grp h3{background:var(--c)}.g-optional li{border-style:dashed;border-right-style:solid}
+@keyframes rise{to{opacity:1;transform:none}}
+figure{margin:0}figure img{width:100%;display:block;border-radius:24px;box-shadow:0 30px 60px -36px rgba(20,47,45,.6)}figcaption{color:var(--muted);font-size:13px;margin-top:12px;text-align:center}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.fact{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:22px}.fact h3{margin:0 0 6px;font-size:18px}.fact p{margin:0;color:var(--muted);font-size:14px}.fact .ic{font-size:26px}
+.fact.r{border-color:#e3c3b9;background:#fbf1ed}
+.docs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.docs a{text-decoration:none;background:var(--white);border:1px solid var(--line);border-radius:16px;padding:16px;transition:transform .2s,border-color .2s}.docs a:hover{transform:translateY(-3px);border-color:var(--green)}.docs b{display:block}.docs span{color:var(--muted);font-size:13px}
+footer{margin-top:96px;background:var(--ink);color:#a9bbb4;padding:36px 0;font-size:14px}footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}footer a{color:var(--lime)}
+@media (max-width:860px){.hero-grid,.install{grid-template-columns:1fr}.orbit{max-width:280px;order:-1}.grp{grid-template-columns:1fr}.facts,.docs{grid-template-columns:1fr 1fr}nav.top .links{display:none}}
+@media (max-width:520px){.facts,.docs{grid-template-columns:1fr}.wrap{padding:0 18px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.grp li{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header class="hero">
+ <div class="wrap">
+  <nav class="top"><a class="brand" href="https://github.com/sabi-karami/SABI-ALL-VPN"><span class="mark">گـ</span><span dir="ltr">SABI ALL VPN</span></a>
+   <div class="links"><a href="#install">نصب</a><a href="#map">اتصال‌ها</a><a href="#panel">پنل</a><a href="#flow">مسیر نصب</a><a href="#facts">پیش از نصب</a><a href="https://github.com/sabi-karami/SABI-ALL-VPN">GitHub ↗</a></div></nav>
+  <div class="hero-grid">
+   <div>
+    <div class="eyebrow">SELF-HOSTED · MULTI-PROTOCOL · PERSIAN PANEL</div>
+    <h1>SABI <em>ALL</em> VPN</h1>
+    <p class="tag">یک دستور، سی کارت اتصال، یک پنل خصوصی فارسی</p>
+    <p class="sub">نصب خودکار روی سرور تازهٔ Ubuntu 24.04 یا ساخت خودکار سرور در AWS — با کلید و رمز تازه برای هر نصب.</p>
+    <div class="chips"><span class="chip beta">نسخهٔ آزمایشی</span><span class="chip ver" dir="ltr">v1.0.0-beta.3</span><span class="chip" dir="ltr">Ubuntu 24.04 amd64</span><span class="chip" dir="ltr">AWS + Cloudflare</span><span class="chip">MIT</span></div>
+   </div>
+   <div class="orbit" aria-hidden="true">
+    <div class="ring" style="--i:0;--t:120s"><i style="--a:0.0deg;--r:50cqw;--c:#d6e777"></i><i style="--a:25.7deg;--r:50cqw;--c:#d6e777"></i><i style="--a:51.4deg;--r:50cqw;--c:#d6e777"></i><i style="--a:77.1deg;--r:50cqw;--c:#d6e777"></i><i style="--a:102.9deg;--r:50cqw;--c:#8fc3d6"></i><i style="--a:128.6deg;--r:50cqw;--c:#8fc3d6"></i><i style="--a:154.3deg;--r:50cqw;--c:#8fc3d6"></i><i style="--a:180.0deg;--r:50cqw;--c:#8fc3d6"></i><i style="--a:205.7deg;--r:50cqw;--c:#8fc3d6"></i><i style="--a:231.4deg;--r:50cqw;--c:#8fc3d6"></i><i style="--a:257.1deg;--r:50cqw;--c:#c3cf6a"></i><i style="--a:282.9deg;--r:50cqw;--c:#c3cf6a"></i><i style="--a:308.6deg;--r:50cqw;--c:#e08a7f"></i><i style="--a:334.3deg;--r:50cqw;--c:#e08a7f"></i></div>
+    <div class="ring" style="--i:15%;--t:80s;animation-direction:reverse"><i style="--a:10deg;--r:35cqw;--c:#d6e777"></i><i style="--a:46deg;--r:35cqw;--c:#d6e777"></i><i style="--a:82deg;--r:35cqw;--c:#d6e777"></i><i style="--a:118deg;--r:35cqw;--c:#8fc3d6"></i><i style="--a:154deg;--r:35cqw;--c:#8fc3d6"></i><i style="--a:190deg;--r:35cqw;--c:#8fc3d6"></i><i style="--a:226deg;--r:35cqw;--c:#8fc3d6"></i><i style="--a:262deg;--r:35cqw;--c:#c3cf6a"></i><i style="--a:298deg;--r:35cqw;--c:#c3cf6a"></i><i style="--a:334deg;--r:35cqw;--c:#e08a7f"></i></div>
+    <div class="ring" style="--i:30%;--t:50s"><i style="--a:20deg;--r:20cqw;--c:#d6e777"></i><i style="--a:80deg;--r:20cqw;--c:#d6e777"></i><i style="--a:140deg;--r:20cqw;--c:#e9a066"></i><i style="--a:200deg;--r:20cqw;--c:#e9a066"></i><i style="--a:260deg;--r:20cqw;--c:#e9a066"></i><i style="--a:320deg;--r:20cqw;--c:#e9a066"></i></div>
+    <div class="core">گـ</div>
+   </div>
+  </div>
+ </div>
+</header>
+<main class="wrap">
+ <div class="install" id="install">
+  <div class="cmd"><h2><span class="n">۱</span>سرور آماده دارید</h2><p>روی سرور تازهٔ Ubuntu 24.04 amd64 از طریق SSH اجرا کنید.</p>
+   <div class="code"><code>bash &lt;(curl -fsSL https://raw.githubusercontent.com/sabi-karami/SABI-ALL-VPN/v1.0.0-beta.3/bootstrap.sh)</code><button class="copy" data-copy="bash &lt;(curl -fsSL https://raw.githubusercontent.com/sabi-karami/SABI-ALL-VPN/v1.0.0-beta.3/bootstrap.sh)">کپی</button></div></div>
+  <div class="cmd aws"><h2><span class="n">۲</span>سرور در AWS ساخته شود</h2><p>روی Linux/WSL با حساب AWS احراز هویت‌شده و Python 3 + venv.</p>
+   <div class="code"><code>bash &lt;(curl -fsSL https://raw.githubusercontent.com/sabi-karami/SABI-ALL-VPN/v1.0.0-beta.3/bootstrap.sh) --aws</code><button class="copy" data-copy="bash &lt;(curl -fsSL https://raw.githubusercontent.com/sabi-karami/SABI-ALL-VPN/v1.0.0-beta.3/bootstrap.sh) --aws">کپی</button></div>
+   <div class="warn">⚠️ پس از تأیید <code>CREATE</code> هزینه‌زا است (EC2، EBS، IPv4، ترافیک). سقف هزینهٔ خودکار ندارد.</div></div>
+ </div>
+ <section id="map"><h2 class="t">نقشهٔ اتصال‌ها</h2><p class="lead">۳۰ کارت در پنج گروه با پورت پیش‌فرض. پیش‌فرض ۲۷ کارت است؛ PPTP و SOCKS/HTTP خام فقط با انتخاب آگاهانه.</p>
+  <div class="groups"><div class="grp g-direct"><h3>مستقیم<span>9</span></h3><ul><li style="--d:25ms"><b dir="ltr">VLESS · REALITY / Xray</b><code dir="ltr">443 / TCP</code></li><li style="--d:50ms"><b dir="ltr">VLESS · REALITY / sing-box</b><code dir="ltr">3443 / TCP</code></li><li style="--d:75ms"><b dir="ltr">Trojan · TLS</b><code dir="ltr">8443 / TCP</code></li><li style="--d:100ms"><b dir="ltr">Shadowsocks · 2022</b><code dir="ltr">8388 / TCP + UDP</code></li><li style="--d:125ms"><b dir="ltr">Hysteria 2</b><code dir="ltr">443 / UDP</code></li><li style="--d:150ms"><b dir="ltr">TUIC</b><code dir="ltr">8443 / UDP</code></li><li style="--d:175ms"><b dir="ltr">AnyTLS</b><code dir="ltr">11443 / TCP</code></li><li style="--d:200ms"><b dir="ltr">NaiveProxy</b><code dir="ltr">10443 / TCP</code></li><li style="--d:225ms"><b dir="ltr">ShadowTLS v3 + SS2022</b><code dir="ltr">9443 / TCP</code></li></ul></div><div class="grp g-cdn"><h3>پشت کلودفلر<span>4</span></h3><ul><li style="--d:250ms"><b dir="ltr">VLESS · WS / CDN</b><code dir="ltr">2053 / TCP</code></li><li style="--d:275ms"><b dir="ltr">VLESS · XHTTP / CDN</b><code dir="ltr">2083 / TCP</code></li><li style="--d:300ms"><b dir="ltr">VMess · WS / CDN</b><code dir="ltr">2087 / TCP</code></li><li style="--d:325ms"><b dir="ltr">Trojan · WS / CDN</b><code dir="ltr">2096 / TCP</code></li></ul></div><div class="grp g-classic"><h3>وی‌پی‌ان کلاسیک<span>10</span></h3><ul><li style="--d:350ms"><b dir="ltr">WireGuard</b><code dir="ltr">51820 / UDP</code></li><li style="--d:375ms"><b dir="ltr">AmneziaWG</b><code dir="ltr">51821 / UDP</code></li><li style="--d:400ms"><b dir="ltr">OpenVPN · UDP</b><code dir="ltr">1194 / UDP</code></li><li style="--d:425ms"><b dir="ltr">OpenVPN · TCP</b><code dir="ltr">1194 / TCP</code></li><li style="--d:450ms"><b dir="ltr">IKEv2 / IPsec</b><code dir="ltr">500 + 4500 / UDP</code></li><li style="--d:475ms"><b dir="ltr">L2TP / IPsec</b><code dir="ltr">500 + 4500 / UDP</code></li><li style="--d:500ms"><b dir="ltr">IPsec · XAuth</b><code dir="ltr">500 + 4500 / UDP</code></li><li style="--d:525ms"><b dir="ltr">OpenConnect / AnyConnect</b><code dir="ltr">4443 / TCP + UDP</code></li><li style="--d:550ms"><b dir="ltr">SSTP</b><code dir="ltr">5555 / TCP</code></li><li style="--d:575ms"><b dir="ltr">SoftEther VPN</b><code dir="ltr">5555 / TCP</code></li></ul></div><div class="grp g-tools"><h3>ابزارهای دیگر<span>4</span></h3><ul><li style="--d:600ms"><b dir="ltr">MTProto · Telegram</b><code dir="ltr">4433 / TCP</code></li><li style="--d:625ms"><b dir="ltr">Tor · obfs4 Bridge</b><code dir="ltr">7443 / TCP</code></li><li style="--d:650ms"><b dir="ltr">SSH · SOCKS Tunnel</b><code dir="ltr">22 / TCP</code></li><li style="--d:675ms"><b dir="ltr">dnstt · DNS Tunnel</b><code dir="ltr">53 / UDP</code></li></ul></div><div class="grp g-optional"><h3>اختیاری، پیش‌فرض خاموش<span>3</span></h3><ul><li style="--d:700ms"><b dir="ltr">SOCKS5</b><code dir="ltr">1080 / TCP</code></li><li style="--d:725ms"><b dir="ltr">HTTP Proxy</b><code dir="ltr">1080 / TCP</code></li><li style="--d:750ms"><b dir="ltr">PPTP</b><code dir="ltr">1723 / TCP + GRE</code></li></ul></div></div></section>
+ <section id="panel"><h2 class="t">پنل خصوصی فارسی</h2><p class="lead">کلیک روی هر مقدار = کپی. رمزها پیش‌فرض پنهان‌اند، آموزش هر روش و دانلود فایل‌ها بعد از ورود.</p>
+  <figure><img src="assets/panel-mockup.svg" alt="تصویر نمایشی پنل با دادهٔ ساختگی" loading="lazy"><figcaption>تصویر نمایشی با دادهٔ ساختگی (<span dir="ltr">vpn.example.com · 192.0.2.10</span>) — اسکرین‌شات پنل واقعی منتشر نمی‌شود.</figcaption></figure></section>
+ <section id="flow"><h2 class="t">مسیر نصب</h2><p class="lead">پس از پرسش‌های اولیه، نصب در سرویس systemd ادامه می‌یابد و با <code dir="ltr">--resume</code> از آخرین checkpoint ادامه پیدا می‌کند.</p>
+  <figure><img src="assets/install-flow.svg" alt="مسیر نصب: bootstrap، install.sh، نُه ماژول، پنل و ZIP" loading="lazy"></figure></section>
+ <section id="facts"><h2 class="t">پیش از نصب بدانید</h2><p class="lead">صادقانه: این چیزها را تضمین نمی‌کنیم.</p>
+  <div class="facts">
+   <div class="fact r"><div class="ic">⏳</div><h3>هنوز آزمایشی است</h3><p>نصب کامل fresh-host و AWS انتهابه‌انتهای این نسخه هنوز انجام نشده. اول روی ماشین disposable امتحان کنید.</p></div>
+   <div class="fact"><div class="ic">🖥️</div><h3>فقط سرور اختصاصی</h3><p>Ubuntu 24.04 amd64 تازه. روی سروری که سرویس دیگری دارد اجرا نکنید؛ rollback کامل وجود ندارد.</p></div>
+   <div class="fact"><div class="ic">🔐</div><h3>رازها خصوصی می‌مانند</h3><p>هیچ رمز واقعی در مخزن نیست. ZIP خصوصی رمزنگاری‌شده نیست؛ هرگز آن را عمومی نکنید.</p></div>
+   <div class="fact"><div class="ic">🌐</div><h3>بدون تضمین عبور</h3><p>فیلترینگ، DNS، سیاست دیتاسنتر و کلاینت‌ها متفاوت‌اند. وضعیت پنل تست اتصال از اینترنت شما نیست.</p></div>
+   <div class="fact"><div class="ic">🧭</div><h3>IPv4 در اولویت</h3><p>مسیر IPv6 در فایل‌های WG/AWG تنظیم نشده؛ IPv6 را روی کلاینت مدیریت کنید. تضمین عدم نشت نیست.</p></div>
+   <div class="fact"><div class="ic">📖</div><h3>پنل read-only</h3><p>فروش اشتراک، ساخت کاربر و حسابداری مصرف ندارد؛ برای مالک سرور طراحی شده است.</p></div>
+  </div></section>
+ <section id="docs"><h2 class="t">مستندات</h2><p class="lead">همه‌چیز در GitHub.</p>
+  <div class="docs">
+   <a href="https://github.com/sabi-karami/SABI-ALL-VPN/blob/main/docs/PROTOCOLS.fa.md"><b>📘 آموزش روش‌ها</b><span>قدم‌به‌قدم برای هر کارت</span></a>
+   <a href="https://github.com/sabi-karami/SABI-ALL-VPN/blob/main/docs/AWS.fa.md"><b>☁️ AWS</b><span>مجوز، هزینه، حذف</span></a>
+   <a href="https://github.com/sabi-karami/SABI-ALL-VPN/blob/main/docs/CLOUDFLARE.fa.md"><b>🌩️ Cloudflare</b><span>دامنه و TLS</span></a>
+   <a href="https://github.com/sabi-karami/SABI-ALL-VPN/blob/main/docs/PORTS.md"><b>🔌 پورت‌ها</b><span>مستقیم و CDN</span></a>
+   <a href="https://github.com/sabi-karami/SABI-ALL-VPN/blob/main/docs/OPERATIONS.fa.md"><b>🧰 عملیات</b><span>ادامه، عیب‌یابی</span></a>
+   <a href="https://github.com/sabi-karami/SABI-ALL-VPN/blob/main/SECURITY.md"><b>🛡️ امنیت</b><span>سیاست رمزها</span></a>
+   <a href="https://github.com/sabi-karami/SABI-ALL-VPN/blob/main/docs/TESTING.md"><b>🧪 آزمون</b><span>چه تست شده</span></a>
+   <a href="https://github.com/sabi-karami/SABI-ALL-VPN/releases"><b>🏷️ نسخه‌ها</b><span>Releaseها و تغییرات</span></a>
+  </div></section>
+</main>
+<footer><div class="wrap"><span>SABI ALL VPN · MIT · فونت Vazirmatn (SIL OFL)</span><span><a href="https://github.com/sabi-karami/SABI-ALL-VPN">github.com/sabi-karami/SABI-ALL-VPN</a></span></div></footer>
+<script>
+document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{
+ const t=b.dataset.copy;try{await navigator.clipboard.writeText(t)}catch(e){const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();document.execCommand('copy');a.remove()}
+ b.textContent='کپی شد ✓';b.classList.add('ok');setTimeout(()=>{b.textContent='کپی';b.classList.remove('ok')},1600)}));
+</script>
+</body>
+</html>

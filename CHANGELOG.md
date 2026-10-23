@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.0.0-beta.3
+
+- Visual redesign of the README: animated SVG banner, protocol map (30 cards, 5 groups, default ports), install-flow diagram, illustrative panel mockup with **synthetic data only**, badges, GitHub alerts and a Mermaid traffic diagram.
+- New GitHub Pages landing page (`docs/index.html`, Persian RTL, Vazirmatn) and docs index (`docs/README.md`).
+- Community health files: issue forms with a secret-redaction warning, private security-report link, PR template, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`.
+- Reproducible artwork generator `docs/assets/build_assets.py` (embeds an OFL Vazirmatn subset).
+- Install commands now reference beta.3. Installer behaviour is unchanged; fresh-host/AWS end-to-end testing is still pending.
+
 ## v1.0.0-beta.2
 
 - Rename repository to `SABI-ALL-VPN` at the owner's request.

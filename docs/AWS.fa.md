@@ -7,7 +7,7 @@ Python3/venv، curl و Bash روی ماشین مدیریت؛ احراز هویت
 نمونه با profile از قبل تنظیم‌شده:
 
 ```bash
-AWS_PROFILE=my-profile bash <(curl -fsSL https://raw.githubusercontent.com/sabi-karami/SABI-ALL-VPN/v1.0.0-beta.2/bootstrap.sh) --aws --region us-east-2
+AWS_PROFILE=my-profile bash <(curl -fsSL https://raw.githubusercontent.com/sabi-karami/SABI-ALL-VPN/v1.0.0-beta.3/bootstrap.sh) --aws --region us-east-2
 ```
 
 رمز Cloudflare به‌صورت ورودی پنهان ترمینال خوانده می‌شود؛ هیچ کلید AWS در کد نیست.
@@ -42,7 +42,7 @@ AWS_PROFILE=my-profile bash <(curl -fsSL https://raw.githubusercontent.com/sabi-
 ادامه:
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/sabi-karami/SABI-ALL-VPN/v1.0.0-beta.2/bootstrap.sh) --aws --resume
+bash <(curl -fsSL https://raw.githubusercontent.com/sabi-karami/SABI-ALL-VPN/v1.0.0-beta.3/bootstrap.sh) --aws --resume
 ```
 
 اگر bootstrap قبلاً راه افتاده، ادامهٔ نصب روی سرور با `sudo bash /opt/sabi-allvpn/install.sh --resume` است. گزینهٔ `--resume` محلی دوباره instance جدید نمی‌سازد.
@@ -50,7 +50,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/sabi-karami/SABI-ALL-VPN/v1.
 حذف صریح منابع ثبت‌شده پس از تهیهٔ پشتیبان:
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/sabi-karami/SABI-ALL-VPN/v1.0.0-beta.2/bootstrap.sh) --aws --delete
+bash <(curl -fsSL https://raw.githubusercontent.com/sabi-karami/SABI-ALL-VPN/v1.0.0-beta.3/bootstrap.sh) --aws --delete
 ```
 
 حذف به تأیید `DELETE` نیاز دارد؛ EC2 با دیسک آن، EIP، SG و role/profile این deployment را حذف می‌کند. رکوردهای Cloudflare عمداً خودکار حذف نمی‌شوند؛ با فهرست `/var/lib/sabi-allvpn/dns-created.json` تطبیق دهید و فقط رکوردهای همین deployment را پاک کنید. این ابزار جایگزین بررسی Billing/EC2 console نیست.

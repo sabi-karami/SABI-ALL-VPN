@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🔒 گزارش خصوصی آسیب‌پذیری / Private security report
+    url: https://github.com/sabi-karami/SABI-ALL-VPN/security/advisories/new
+    about: آسیب‌پذیری امنیتی را عمومی منتشر نکنید. Do not file security issues publicly.
+  - name: 📚 مستندات / Documentation
+    url: https://github.com/sabi-karami/SABI-ALL-VPN/tree/main/docs
+    about: آموزش پروتکل‌ها، AWS، Cloudflare، پورت‌ها و عیب‌یابی

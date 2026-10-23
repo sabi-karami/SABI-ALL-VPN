@@ -1,0 +1,75 @@
+name: 🐞 گزارش خطا / Bug report
+description: نصب یا پنل درست کار نمی‌کند — بدون هیچ رمز و اطلاعات خصوصی
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > ⚠️ **هرگز رمز، کلید خصوصی، UUID، لینک اتصال (vless:// و …)، IP واقعی سرور، دامنهٔ خصوصی، توکن Cloudflare/AWS، `auth.json` یا ZIP خصوصی را اینجا نگذارید.**
+        > اگر به‌اشتباه گذاشتید، فوراً آن را پاک و کلید/رمز را عوض کنید.
+        > Never paste passwords, private keys, connection links, real server IPs, API tokens or the private ZIP.
+  - type: dropdown
+    id: mode
+    attributes:
+      label: روش نصب / Install mode
+      options:
+        - سرور آماده (bootstrap.sh)
+        - AWS (bootstrap.sh --aws)
+        - دستی از tarball (install.sh)
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: نسخه / Version
+      placeholder: v1.0.0-beta.3
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: بخش / Area
+      multiple: true
+      options:
+        - نصب‌کننده / installer
+        - Xray / sing-box
+        - WireGuard / AmneziaWG
+        - OpenVPN / IPsec / OpenConnect / SoftEther
+        - ابزارها (MTProto / Tor / dnstt / SSH)
+        - پنل فارسی / panel
+        - DNS / Cloudflare / TLS
+        - AWS provisioning
+        - مستندات / docs
+  - type: textarea
+    id: what
+    attributes:
+      label: چه اتفاقی افتاد؟ / What happened?
+      description: انتظار داشتید چه شود و چه شد؟
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: مراحل بازتولید / Steps to reproduce
+      placeholder: |
+        1. ...
+        2. ...
+  - type: textarea
+    id: logs
+    attributes:
+      label: لاگ (سانسورشده) / Redacted logs
+      description: خروجی `sudo tail -n 80 /var/log/sabi-allvpn-install.log` یا `doctor.py` — پیش از ارسال دامنه را با vpn.example.com و IP را با 192.0.2.1 جایگزین کنید.
+      render: shell
+  - type: input
+    id: env
+    attributes:
+      label: محیط / Environment
+      placeholder: Ubuntu 24.04 amd64، ارائه‌دهندهٔ سرور، نوع کلاینت
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: تأیید / Confirmation
+      options:
+        - label: هیچ رمز، کلید، لینک اتصال، IP واقعی یا توکنی در این گزارش نیست. / This report contains no secrets.
+          required: true
