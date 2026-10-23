@@ -68,7 +68,7 @@ b.append(T(RX,96,'SELF-HOSTED  ·  MULTI-PROTOCOL  ·  PERSIAN PANEL',13,600,LIM
 b.append(f'<text x="{RX}" y="186" text-anchor="end" style="font-family:SabiV,Vazirmatn,sans-serif;font-size:94px;font-weight:900;letter-spacing:-1px" fill="{PAPER}">SABI <tspan fill="{LIME}">ALL</tspan> VPN</text>')
 b.append(T(RX,246,'یک دستور، سی کارت اتصال، یک پنل خصوصی فارسی',31,700,PAPER))
 b.append(T(RX,284,'نصب خودکار روی سرور تازهٔ Ubuntu یا ساخت خودکار سرور در AWS',18,400,'#a9bbb4'))
-chips=[('MIT',None),('AWS + Cloudflare',None),('Ubuntu 24.04',None),('v1.0.0-beta.3',ORANGE)]
+chips=[('MIT',None),('AWS + Cloudflare',None),('Ubuntu 24.04',None),('v1.0.0-beta.4',ORANGE)]
 x=RX
 for t,c in chips:
     w=int(len(t)*8.6+30);x0=x-w

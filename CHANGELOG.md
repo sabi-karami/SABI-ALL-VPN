@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.0.0-beta.4
+
+- `bootstrap.sh` now installs its own prerequisites automatically: curl, Python 3, python3-venv and CA certificates (apt with lock wait, dnf, yum, zypper, apk, pacman or Homebrew). No manual step is needed before the one-line command.
+- Download falls back to `wget` when `curl` is absent; a `wget` variant of the one-liner is documented. Manifest check falls back to `shasum -a 256`.
+- New `--deps-only [--aws]` option; broken AWS helper venvs are recreated.
+- New unit test with a simulated package manager. Installer modules unchanged.
+
 ## v1.0.0-beta.3
 
 - Visual redesign of the README: animated SVG banner, protocol map (30 cards, 5 groups, default ports), install-flow diagram, illustrative panel mockup with **synthetic data only**, badges, GitHub alerts and a Mermaid traffic diagram.

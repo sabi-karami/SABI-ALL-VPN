@@ -70,7 +70,7 @@ footer{margin-top:96px;background:var(--ink);color:#a9bbb4;padding:36px 0;font-s
     <h1>SABI <em>ALL</em> VPN</h1>
     <p class="tag">یک دستور، سی کارت اتصال، یک پنل خصوصی فارسی</p>
     <p class="sub">نصب خودکار روی سرور تازهٔ Ubuntu 24.04 یا ساخت خودکار سرور در AWS — با کلید و رمز تازه برای هر نصب.</p>
-    <div class="chips"><span class="chip beta">نسخهٔ آزمایشی</span><span class="chip ver" dir="ltr">v1.0.0-beta.3</span><span class="chip" dir="ltr">Ubuntu 24.04 amd64</span><span class="chip" dir="ltr">AWS + Cloudflare</span><span class="chip">MIT</span></div>
+    <div class="chips"><span class="chip beta">نسخهٔ آزمایشی</span><span class="chip ver" dir="ltr">v1.0.0-beta.4</span><span class="chip" dir="ltr">Ubuntu 24.04 amd64</span><span class="chip" dir="ltr">AWS + Cloudflare</span><span class="chip">MIT</span></div>
    </div>
    <div class="orbit" aria-hidden="true">
     <div class="ring" style="--i:0;--t:120s"><i style="--a:0.0deg;--r:50cqw;--c:#d6e777"></i><i style="--a:25.7deg;--r:50cqw;--c:#d6e777"></i><i style="--a:51.4deg;--r:50cqw;--c:#d6e777"></i><i style="--a:77.1deg;--r:50cqw;--c:#d6e777"></i><i style="--a:102.9deg;--r:50cqw;--c:#8fc3d6"></i><i style="--a:128.6deg;--r:50cqw;--c:#8fc3d6"></i><i style="--a:154.3deg;--r:50cqw;--c:#8fc3d6"></i><i style="--a:180.0deg;--r:50cqw;--c:#8fc3d6"></i><i style="--a:205.7deg;--r:50cqw;--c:#8fc3d6"></i><i style="--a:231.4deg;--r:50cqw;--c:#8fc3d6"></i><i style="--a:257.1deg;--r:50cqw;--c:#c3cf6a"></i><i style="--a:282.9deg;--r:50cqw;--c:#c3cf6a"></i><i style="--a:308.6deg;--r:50cqw;--c:#e08a7f"></i><i style="--a:334.3deg;--r:50cqw;--c:#e08a7f"></i></div>
@@ -83,10 +83,10 @@ footer{margin-top:96px;background:var(--ink);color:#a9bbb4;padding:36px 0;font-s
 </header>
 <main class="wrap">
  <div class="install" id="install">
-  <div class="cmd"><h2><span class="n">۱</span>سرور آماده دارید</h2><p>روی سرور تازهٔ Ubuntu 24.04 amd64 از طریق SSH اجرا کنید.</p>
-   <div class="code"><code>bash &lt;(curl -fsSL https://raw.githubusercontent.com/sabi-karami/SABI-ALL-VPN/v1.0.0-beta.3/bootstrap.sh)</code><button class="copy" data-copy="bash &lt;(curl -fsSL https://raw.githubusercontent.com/sabi-karami/SABI-ALL-VPN/v1.0.0-beta.3/bootstrap.sh)">کپی</button></div></div>
-  <div class="cmd aws"><h2><span class="n">۲</span>سرور در AWS ساخته شود</h2><p>روی Linux/WSL با حساب AWS احراز هویت‌شده و Python 3 + venv.</p>
-   <div class="code"><code>bash &lt;(curl -fsSL https://raw.githubusercontent.com/sabi-karami/SABI-ALL-VPN/v1.0.0-beta.3/bootstrap.sh) --aws</code><button class="copy" data-copy="bash &lt;(curl -fsSL https://raw.githubusercontent.com/sabi-karami/SABI-ALL-VPN/v1.0.0-beta.3/bootstrap.sh) --aws">کپی</button></div>
+  <div class="cmd"><h2><span class="n">۱</span>سرور آماده دارید</h2><p>روی سرور تازهٔ Ubuntu 24.04 amd64 از طریق SSH اجرا کنید. curl، Python 3 و venv اگر نباشند خودکار نصب می‌شوند.</p>
+   <div class="code"><code>bash &lt;(curl -fsSL https://raw.githubusercontent.com/sabi-karami/SABI-ALL-VPN/v1.0.0-beta.4/bootstrap.sh)</code><button class="copy" data-copy="bash &lt;(curl -fsSL https://raw.githubusercontent.com/sabi-karami/SABI-ALL-VPN/v1.0.0-beta.4/bootstrap.sh)">کپی</button></div></div>
+  <div class="cmd aws"><h2><span class="n">۲</span>سرور در AWS ساخته شود</h2><p>روی Linux، WSL یا macOS با حساب AWS احراز هویت‌شده. پیش‌نیازها خودکار نصب می‌شوند.</p>
+   <div class="code"><code>bash &lt;(curl -fsSL https://raw.githubusercontent.com/sabi-karami/SABI-ALL-VPN/v1.0.0-beta.4/bootstrap.sh) --aws</code><button class="copy" data-copy="bash &lt;(curl -fsSL https://raw.githubusercontent.com/sabi-karami/SABI-ALL-VPN/v1.0.0-beta.4/bootstrap.sh) --aws">کپی</button></div>
    <div class="warn">⚠️ پس از تأیید <code>CREATE</code> هزینه‌زا است (EC2، EBS، IPv4، ترافیک). سقف هزینهٔ خودکار ندارد.</div></div>
  </div>
  <section id="map"><h2 class="t">نقشهٔ اتصال‌ها</h2><p class="lead">۳۰ کارت در پنج گروه با پورت پیش‌فرض. پیش‌فرض ۲۷ کارت است؛ PPTP و SOCKS/HTTP خام فقط با انتخاب آگاهانه.</p>

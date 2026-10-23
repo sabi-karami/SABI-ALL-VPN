@@ -15,6 +15,21 @@ class RepoTests(unittest.TestCase):
    if p.is_file() and p.suffix not in ['.woff2','.pyc'] and '.git' not in p.parts and p.name!='test_repo.py':
     t=p.read_text()
     self.assertNotRegex(t,r'AKIA[A-Z0-9]{16}');self.assertNotRegex(t,r'-----BEGIN (?:RSA |OPENSSH )?PRIVATE KEY-----')
+ def test_bootstrap_installs_missing_prereqs(self):
+  import shutil
+  bash=shutil.which('bash');py=shutil.which('python3') or sys.executable
+  with tempfile.TemporaryDirectory() as td:
+   b=Path(td)/'bin';b.mkdir();log=Path(td)/'apt.log'
+   for c in ['env','mktemp','rm','ln']:(b/c).symlink_to(shutil.which(c))
+   (b/'apt-get').write_text(f'#!{bash}\necho "$@" >> {log}\ncase " $* " in *" install "*) ln -sf {py} {b}/python3; ln -sf {shutil.which("true")} {b}/curl;; esac\n')
+   (b/'sudo').write_text(f'#!{bash}\nexec "$@"\n')
+   for f in ['apt-get','sudo']:(b/f).chmod(0o755)
+   env={'PATH':str(b),'HOME':td}
+   r=subprocess.run([bash,str(ROOT/'bootstrap.sh'),'--deps-only'],env=env,capture_output=True,text=True)
+   self.assertEqual(r.returncode,0,r.stderr);first=log.read_text()
+   self.assertIn('update',first);self.assertIn('python3',first);self.assertIn('curl',first);self.assertIn('python3-venv',first)
+   r=subprocess.run([bash,str(ROOT/'bootstrap.sh'),'--deps-only'],env=env,capture_output=True,text=True)
+   self.assertEqual(r.returncode,0,r.stderr);self.assertEqual(log.read_text(),first)
  def test_no_shell_tracing(self):
   for p in (ROOT/'modules').glob('*.sh'):self.assertNotRegex(p.read_text(),r'(?m)^set -[a-zA-Z]*x')
  def test_core_heredocs(self):

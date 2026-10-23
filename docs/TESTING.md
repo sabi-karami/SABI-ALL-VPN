@@ -1,8 +1,8 @@
 # Verification scope
 
-Release: v1.0.0-beta.3
+Release: v1.0.0-beta.4
 
-beta.3 changes documentation, artwork, GitHub Pages and community files only; installer logic is identical to beta.2.
+beta.4: `bootstrap.sh` installs missing prerequisites itself (unit-tested with a simulated apt-get on a PATH without python3/curl; idempotent second run). Real package installation on each distribution is not CI-tested. Installer modules are unchanged since beta.2.
 
 Implemented automated checks:
 - Bash syntax for all shell files.
@@ -13,6 +13,7 @@ Implemented automated checks:
 - 30-card template shape and per-card instructions.
 - No live-identity/credential material expected in public source.
 - No shell xtrace in runtime modules.
+- Bootstrap prerequisite auto-install (simulated package manager).
 - Panel authentication, unauthorized download rejection, origin/CSRF checks, logout/session invalidation and 7/8-character password boundary.
 - JavaScript syntax and source manifest in GitHub Actions.
 

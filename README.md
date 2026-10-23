@@ -25,7 +25,7 @@
 **SABI ALL VPN** یک نصب‌کنندهٔ چندروشی برای **سرور اختصاصی** است: با یک دستور ده‌ها روش اتصال (Xray، sing-box، WireGuard، OpenVPN، IPsec و …) را نصب می‌کند، برای هر نصب کلید و رمز تازه می‌سازد و همه‌چیز را در یک **پنل خصوصی فارسی با کلیک‌برای‌کپی** و یک **ZIP خصوصی کامل** تحویل می‌دهد.
 
 > [!IMPORTANT]
-> **نسخهٔ آزمایشی `v1.0.0-beta.3` — فقط Ubuntu 24.04 / x86-64.** این پروژه مجموعهٔ مشخص‌شدهٔ پایین را خودکار نصب می‌کند؛ «تمام پروتکل‌های VPN دنیا» نیست. ۳۰ کارت پنل شامل حالت‌های مختلف یک پروتکل است، نه ۳۰ استاندارد مستقل. هیچ کلید یا رمز واقعیِ هیچ سروری در این مخزن عمومی نیست.
+> **نسخهٔ آزمایشی `v1.0.0-beta.4` — فقط Ubuntu 24.04 / x86-64.** این پروژه مجموعهٔ مشخص‌شدهٔ پایین را خودکار نصب می‌کند؛ «تمام پروتکل‌های VPN دنیا» نیست. ۳۰ کارت پنل شامل حالت‌های مختلف یک پروتکل است، نه ۳۰ استاندارد مستقل. هیچ کلید یا رمز واقعیِ هیچ سروری در این مخزن عمومی نیست.
 
 <table>
 <tr>
@@ -41,20 +41,27 @@
 
 ### ۱ · سرور آماده دارید
 
-روی **سرور تازهٔ Ubuntu 24.04 amd64** وارد SSH شوید (`curl` و Python 3 لازم است):
+روی **سرور تازهٔ Ubuntu 24.04 amd64** وارد SSH شوید و فقط همین یک خط را اجرا کنید:
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/sabi-karami/SABI-ALL-VPN/v1.0.0-beta.3/bootstrap.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/sabi-karami/SABI-ALL-VPN/v1.0.0-beta.4/bootstrap.sh)
 ```
+
+> [!TIP]
+> **پیش‌نیازها خودکار نصب می‌شوند.** اگر `curl`، Python 3، `python3-venv` یا گواهی‌های CA روی سرور نباشند، bootstrap خودش آن‌ها را نصب می‌کند و بعد ادامه می‌دهد؛ لازم نیست کاربر کاری دستی انجام دهد. اگر حتی `curl` برای اجرای همین خط اول وجود ندارد، همین دستور با `wget` هم کار می‌کند:
+>
+> ```bash
+> bash <(wget -qO- https://raw.githubusercontent.com/sabi-karami/SABI-ALL-VPN/v1.0.0-beta.4/bootstrap.sh)
+> ```
 
 اسکریپت در صورت نیاز `sudo` می‌خواهد و نام دامنه، پیشوند ساب‌دامین‌ها، IPv4 و روش تنظیم DNS را می‌پرسد. در حالت Cloudflare، توکن را **فقط در ورودی مخفی ترمینال خودتان** وارد کنید؛ نه در چت، دستور shell، فایل عمومی یا GitHub.
 
 ### ۲ · سرور هم در AWS ساخته شود
 
-روی Linux/WSL یا هر محیط دارای **Bash، curl، Python 3 + venv** و حساب AWS از قبل احراز هویت‌شده:
+روی Linux، WSL یا macOS با **Bash** و حساب AWS از قبل احراز هویت‌شده (curl، Python 3 و venv در صورت نبودن خودکار نصب می‌شوند):
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/sabi-karami/SABI-ALL-VPN/v1.0.0-beta.3/bootstrap.sh) --aws
+bash <(curl -fsSL https://raw.githubusercontent.com/sabi-karami/SABI-ALL-VPN/v1.0.0-beta.4/bootstrap.sh) --aws
 ```
 
 > [!WARNING]
@@ -66,9 +73,9 @@ bash <(curl -fsSL https://raw.githubusercontent.com/sabi-karami/SABI-ALL-VPN/v1.
 اجرای کد اینترنت با دسترسی root ریسک دارد. پیش از اجرا کد را بخوانید؛ نسخهٔ مشخص بهتر از شاخهٔ متغیر `main` است:
 
 ```bash
-curl -fL https://github.com/sabi-karami/SABI-ALL-VPN/archive/refs/tags/v1.0.0-beta.3.tar.gz -o sabi-source.tgz
+curl -fL https://github.com/sabi-karami/SABI-ALL-VPN/archive/refs/tags/v1.0.0-beta.4.tar.gz -o sabi-source.tgz
 tar -xzf sabi-source.tgz
-cd SABI-ALL-VPN-1.0.0-beta.3
+cd SABI-ALL-VPN-1.0.0-beta.4
 sha256sum -c MANIFEST.sha256
 sudo bash install.sh
 ```
@@ -221,6 +228,7 @@ sudo python3 /opt/sabi-allvpn/scripts/export_private.py
 | ✅ | پنل مبنا قبلاً با مرورگر دسکتاپ/موبایل و دانلود احراز هویت‌شده تست شده بود |
 | ⏳ | **نصب کامل fresh-host و AWS provisioning انتهابه‌انتهای این نسخهٔ یکپارچه هنوز انجام نشده است** — اول روی ماشین آزمایشی disposable امتحان کنید |
 | ⚠️ | بسته‌های apt، وابستگی‌های build و بعضی دانلودهای nested نصب‌کنندهٔ IPsec کاملاً قفل نیستند؛ build صددرصد reproducible نیست (هسته‌ها در `versions.lock.json` قفل‌اند) |
+| ℹ️ | نصب خودکار پیش‌نیازها با apt، dnf، yum، zypper، apk، pacman یا Homebrew انجام می‌شود و دسترسی root/sudo لازم دارد (ممکن است رمز sudo بپرسد). Bash باید از قبل باشد. روی macOS بدون Homebrew، Python را خودتان نصب کنید |
 | ⚠️ | گرفتن گواهی، تأخیر DNS، فیلترینگ، سیاست دیتاسنتر و تفاوت کلاینت‌ها ممکن است باعث خطا شوند |
 | ⚠️ | IPv4 در اولویت است؛ مسیر IPv6 در فایل‌های WG/AWG تنظیم نشده. IPv6 را روی کلاینت مدیریت/مسدود کنید؛ تضمین جلوگیری از نشت وجود ندارد |
 
