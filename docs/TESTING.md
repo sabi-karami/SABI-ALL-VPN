@@ -1,6 +1,6 @@
 # Verification scope
 
-Release: v1.0.0-beta.1
+Release: v1.0.0-beta.2
 
 Implemented automated checks:
 - Bash syntax for all shell files.

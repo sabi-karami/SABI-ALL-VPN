@@ -2,7 +2,7 @@
 
 کتابخانهٔ خصوصی اتصال + نصب‌کنندهٔ چندروشی روی سرور اختصاصی.
 
-**نسخهٔ آزمایشی `v1.0.0-beta.1` — Ubuntu 24.04 / x86-64 فقط.**
+**نسخهٔ آزمایشی `v1.0.0-beta.2` — Ubuntu 24.04 / x86-64 فقط.**
 
 > این پروژه نصب مجموعهٔ مشخص‌شدهٔ پایین را خودکار می‌کند؛ «تمام پروتکل‌های VPN دنیا» نیست. ۳۰ کارت پنل شامل حالت‌های مختلف یک پروتکل است، نه ۳۰ استاندارد مستقل. کلیدها و رمزهای واقعی هیچ سرور در این مخزن عمومی نیستند.
 
@@ -13,7 +13,7 @@
 روی **سرور تازهٔ Ubuntu 24.04 amd64** وارد SSH شوید. `curl` و Python 3 باید نصب باشند:
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/sabi-karami/sabi-allvpn/v1.0.0-beta.1/bootstrap.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/sabi-karami/SABI-ALL-VPN/v1.0.0-beta.2/bootstrap.sh)
 ```
 
 اسکریپت در صورت نیاز `sudo` می‌خواهد. نام دامنه، پیشوند ساب‌دامین‌ها، IPv4 و تنظیم DNS را می‌پرسد. در حالت Cloudflare، توکن را **فقط در ورودی مخفی ترمینال خودتان** وارد کنید؛ نه در چت، دستور shell، فایل عمومی یا GitHub.
@@ -23,7 +23,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/sabi-karami/sabi-allvpn/v1.0
 روی Linux/WSL یا محیط دارای **Bash، curl، Python 3 + venv** و حساب AWS از قبل احراز هویت‌شده اجرا کنید:
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/sabi-karami/sabi-allvpn/v1.0.0-beta.1/bootstrap.sh) --aws
+bash <(curl -fsSL https://raw.githubusercontent.com/sabi-karami/SABI-ALL-VPN/v1.0.0-beta.2/bootstrap.sh) --aws
 ```
 
 از زنجیرهٔ استاندارد اعتبارنامهٔ boto3 (مانند AWS profile یا SSO) استفاده می‌شود. این فرمان **پس از تأیید `CREATE` هزینه‌زا است**: EC2، EBS، IPv4 ثابت و ترافیک. منطقهٔ پیش‌فرض `us-east-2` است و قابل انتخاب است؛ محدودیت SCP/Quota دور زده نمی‌شود.
@@ -35,9 +35,9 @@ bash <(curl -fsSL https://raw.githubusercontent.com/sabi-karami/sabi-allvpn/v1.0
 اجرای کد اینترنت با دسترسی root ریسک دارد. پیش از اجرا کد را بررسی کنید؛ نسخهٔ مشخص بهتر از شاخهٔ متغیر `main` است:
 
 ```bash
-curl -fL https://github.com/sabi-karami/sabi-allvpn/archive/refs/tags/v1.0.0-beta.1.tar.gz -o sabi-source.tgz
+curl -fL https://github.com/sabi-karami/SABI-ALL-VPN/archive/refs/tags/v1.0.0-beta.2.tar.gz -o sabi-source.tgz
 tar -xzf sabi-source.tgz
-cd sabi-allvpn-1.0.0-beta.1
+cd SABI-ALL-VPN-1.0.0-beta.2
 sha256sum -c MANIFEST.sha256
 sudo bash install.sh
 ```

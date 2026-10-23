@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.0.0-beta.2
+
+- Rename repository to `SABI-ALL-VPN` at the owner's request.
+- Update public URLs and bootstrap source-directory handling for the new repository name.
+- Use beta.2 commands in the README; beta.1 is retained as historical source.
+- Installation features, secret handling and validation limitations are unchanged.
+
 ## v1.0.0-beta.1
 
 - Two bootstraps: existing dedicated Ubuntu host, or AWS provisioning followed by the same installation.

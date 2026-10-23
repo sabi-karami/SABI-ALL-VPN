@@ -4,8 +4,8 @@ import argparse,base64,getpass,ipaddress,json,os,re,secrets,time,sys,urllib.requ
 from pathlib import Path
 import boto3
 from botocore.exceptions import ClientError
-VERSION='v1.0.0-beta.1'
-REPO='sabi-karami/sabi-allvpn'
+VERSION='v1.0.0-beta.2'
+REPO='sabi-karami/SABI-ALL-VPN'
 parser=argparse.ArgumentParser();parser.add_argument('--region');parser.add_argument('--state');parser.add_argument('--resume',action='store_true');parser.add_argument('--delete',action='store_true');args=parser.parse_args()
 path=Path(args.state).expanduser() if args.state else Path.home()/'.local/state/sabi-allvpn/aws-state.json';path.parent.mkdir(parents=True,exist_ok=True,mode=0o700)
 s=json.loads(path.read_text()) if path.exists() else {};region=s.get('region') or args.region or os.environ.get('AWS_REGION') or 'us-east-2'
