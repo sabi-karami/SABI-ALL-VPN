@@ -1,0 +1,1398 @@
+{
+  "server": {
+    "domain": "${DOMAIN}",
+    "cdn": "${CDN}",
+    "ip": "${IP}",
+    "region": "${REGION}",
+    "instance": "${INSTANCE_ID}",
+    "url": "https://${DOMAIN}:9444"
+  },
+  "items": [
+    {
+      "id": "reality-xray",
+      "title": "VLESS · REALITY / Xray",
+      "group": "direct",
+      "summary": "اتصال مستقیم، هستهٔ Xray",
+      "service": "xray",
+      "port": "443 / TCP",
+      "fields": [
+        {
+          "label": "لینک اتصال",
+          "value": "${LINK_reality-xray}",
+          "secret": true
+        },
+        {
+          "label": "آدرس",
+          "value": "${IP}",
+          "secret": false
+        },
+        {
+          "label": "پورت",
+          "value": "443",
+          "secret": false
+        },
+        {
+          "label": "SNI",
+          "value": "${REALITY_SNI}",
+          "secret": false
+        },
+        {
+          "label": "UUID",
+          "value": "${UUID}",
+          "secret": true
+        },
+        {
+          "label": "Public key",
+          "value": "${REALITY_PUB}",
+          "secret": false
+        },
+        {
+          "label": "Short ID",
+          "value": "${REALITY_SID}",
+          "secret": true
+        }
+      ],
+      "files": [],
+      "steps": [
+        "v2rayNG در اندروید یا v2rayN با هستهٔ Xray مناسب است.",
+        "یک کلاینت سازگار با این روش نصب کنید.",
+        "روی «کپی لینک اتصال» بزنید؛ در کلاینت گزینهٔ افزودن یا Import from clipboard را انتخاب کنید.",
+        "پروفایل را انتخاب و متصل شوید؛ اگر برنامه اجازهٔ VPN خواست، تأیید کنید.",
+        "در مرورگر IP خروجی را بررسی کنید؛ برای مسیرهای این سرور باید ${IP} دیده شود."
+      ],
+      "warnings": [],
+      "links": [],
+      "evidence": "فعال بودن سرویس پس از نصب بررسی می‌شود. اتصال کامل از اینترنت و دستگاه شما باید جداگانه آزمایش شود."
+    },
+    {
+      "id": "reality-singbox",
+      "title": "VLESS · REALITY / sing-box",
+      "group": "direct",
+      "summary": "مسیر جدا برای هستهٔ sing-box",
+      "service": "sing-box",
+      "port": "3443 / TCP",
+      "fields": [
+        {
+          "label": "لینک اتصال",
+          "value": "${LINK_reality-singbox}",
+          "secret": true
+        },
+        {
+          "label": "آدرس",
+          "value": "${IP}",
+          "secret": false
+        },
+        {
+          "label": "پورت",
+          "value": "3443",
+          "secret": false
+        },
+        {
+          "label": "SNI",
+          "value": "${REALITY_SNI}",
+          "secret": false
+        },
+        {
+          "label": "UUID",
+          "value": "${UUID}",
+          "secret": true
+        },
+        {
+          "label": "Public key",
+          "value": "${REALITY_PUB}",
+          "secret": false
+        },
+        {
+          "label": "Short ID",
+          "value": "${REALITY_SID}",
+          "secret": true
+        }
+      ],
+      "files": [],
+      "steps": [
+        "از کلاینت دارای هستهٔ sing-box و پشتیبانی REALITY استفاده کنید.",
+        "یک کلاینت سازگار با این روش نصب کنید.",
+        "روی «کپی لینک اتصال» بزنید؛ در کلاینت گزینهٔ افزودن یا Import from clipboard را انتخاب کنید.",
+        "پروفایل را انتخاب و متصل شوید؛ اگر برنامه اجازهٔ VPN خواست، تأیید کنید.",
+        "در مرورگر IP خروجی را بررسی کنید؛ برای مسیرهای این سرور باید ${IP} دیده شود."
+      ],
+      "warnings": [
+        "این مسیر را با REALITY روی پورت 443 اشتباه نگیرید."
+      ],
+      "links": [],
+      "evidence": "فعال بودن سرویس پس از نصب بررسی می‌شود. اتصال کامل از اینترنت و دستگاه شما باید جداگانه آزمایش شود."
+    },
+    {
+      "id": "vless-ws",
+      "title": "VLESS · WS / CDN",
+      "group": "cdn",
+      "summary": "WebSocket از مسیر Cloudflare",
+      "service": "xray",
+      "port": "2053 / TCP",
+      "fields": [
+        {
+          "label": "لینک اتصال",
+          "value": "${LINK_vless-ws}",
+          "secret": true
+        },
+        {
+          "label": "آدرس",
+          "value": "${CDN}",
+          "secret": false
+        },
+        {
+          "label": "پورت",
+          "value": "2053",
+          "secret": false
+        }
+      ],
+      "files": [],
+      "steps": [
+        "یک کلاینت سازگار با این روش نصب کنید.",
+        "روی «کپی لینک اتصال» بزنید؛ در کلاینت گزینهٔ افزودن یا Import from clipboard را انتخاب کنید.",
+        "پروفایل را انتخاب و متصل شوید؛ اگر برنامه اجازهٔ VPN خواست، تأیید کنید.",
+        "در مرورگر IP خروجی را بررسی کنید؛ برای مسیرهای این سرور باید ${IP} دیده شود."
+      ],
+      "warnings": [
+        "این مسیر از Cloudflare عبور می‌کند، اما در برابر فیلترینگ تضمین‌شده نیست."
+      ],
+      "links": [],
+      "evidence": "فعال بودن سرویس پس از نصب بررسی می‌شود. اتصال کامل از اینترنت و دستگاه شما باید جداگانه آزمایش شود."
+    },
+    {
+      "id": "vless-xhttp",
+      "title": "VLESS · XHTTP / CDN",
+      "group": "cdn",
+      "summary": "XHTTP با هستهٔ سازگار Xray",
+      "service": "xray",
+      "port": "2083 / TCP",
+      "fields": [
+        {
+          "label": "لینک اتصال",
+          "value": "${LINK_vless-xhttp}",
+          "secret": true
+        },
+        {
+          "label": "آدرس",
+          "value": "${CDN}",
+          "secret": false
+        },
+        {
+          "label": "پورت",
+          "value": "2083",
+          "secret": false
+        }
+      ],
+      "files": [],
+      "steps": [
+        "نسخهٔ جدید کلاینت Xray که XHTTP را پشتیبانی می‌کند لازم است.",
+        "یک کلاینت سازگار با این روش نصب کنید.",
+        "روی «کپی لینک اتصال» بزنید؛ در کلاینت گزینهٔ افزودن یا Import from clipboard را انتخاب کنید.",
+        "پروفایل را انتخاب و متصل شوید؛ اگر برنامه اجازهٔ VPN خواست، تأیید کنید.",
+        "در مرورگر IP خروجی را بررسی کنید؛ برای مسیرهای این سرور باید ${IP} دیده شود."
+      ],
+      "warnings": [
+        "WebSocket و HTTP معمولی جایگزین تنظیم XHTTP نیستند."
+      ],
+      "links": [],
+      "evidence": "فعال بودن سرویس پس از نصب بررسی می‌شود. اتصال کامل از اینترنت و دستگاه شما باید جداگانه آزمایش شود."
+    },
+    {
+      "id": "vmess",
+      "title": "VMess · WS / CDN",
+      "group": "cdn",
+      "summary": "WebSocket با رمزنگاری AES-128-GCM",
+      "service": "xray",
+      "port": "2087 / TCP",
+      "fields": [
+        {
+          "label": "لینک اتصال",
+          "value": "${LINK_vmess}",
+          "secret": true
+        },
+        {
+          "label": "آدرس",
+          "value": "${CDN}",
+          "secret": false
+        },
+        {
+          "label": "UUID",
+          "value": "${UUID}",
+          "secret": true
+        },
+        {
+          "label": "مسیر",
+          "value": "${WS_VMESS}",
+          "secret": false
+        }
+      ],
+      "files": [],
+      "steps": [
+        "یک کلاینت سازگار با این روش نصب کنید.",
+        "روی «کپی لینک اتصال» بزنید؛ در کلاینت گزینهٔ افزودن یا Import from clipboard را انتخاب کنید.",
+        "پروفایل را انتخاب و متصل شوید؛ اگر برنامه اجازهٔ VPN خواست، تأیید کنید.",
+        "در مرورگر IP خروجی را بررسی کنید؛ برای مسیرهای این سرور باید ${IP} دیده شود."
+      ],
+      "warnings": [
+        "روش رمزنگاری لینک را روی aes-128-gcm نگه دارید؛ حالت auto در آزمون نصب ناسازگاری داشت."
+      ],
+      "links": [],
+      "evidence": "فعال بودن سرویس پس از نصب بررسی می‌شود. اتصال کامل از اینترنت و دستگاه شما باید جداگانه آزمایش شود."
+    },
+    {
+      "id": "trojan-ws",
+      "title": "Trojan · WS / CDN",
+      "group": "cdn",
+      "summary": "Trojan روی WebSocket",
+      "service": "xray",
+      "port": "2096 / TCP",
+      "fields": [
+        {
+          "label": "لینک اتصال",
+          "value": "${LINK_trojan-ws}",
+          "secret": true
+        },
+        {
+          "label": "آدرس",
+          "value": "${CDN}",
+          "secret": false
+        },
+        {
+          "label": "پورت",
+          "value": "2096",
+          "secret": false
+        },
+        {
+          "label": "رمز",
+          "value": "${TROJAN_PW}",
+          "secret": true
+        }
+      ],
+      "files": [],
+      "steps": [
+        "یک کلاینت سازگار با این روش نصب کنید.",
+        "روی «کپی لینک اتصال» بزنید؛ در کلاینت گزینهٔ افزودن یا Import from clipboard را انتخاب کنید.",
+        "پروفایل را انتخاب و متصل شوید؛ اگر برنامه اجازهٔ VPN خواست، تأیید کنید.",
+        "در مرورگر IP خروجی را بررسی کنید؛ برای مسیرهای این سرور باید ${IP} دیده شود."
+      ],
+      "warnings": [],
+      "links": [],
+      "evidence": "فعال بودن سرویس پس از نصب بررسی می‌شود. اتصال کامل از اینترنت و دستگاه شما باید جداگانه آزمایش شود."
+    },
+    {
+      "id": "trojan-tls",
+      "title": "Trojan · TLS",
+      "group": "direct",
+      "summary": "اتصال مستقیم با گواهی TLS",
+      "service": "xray",
+      "port": "8443 / TCP",
+      "fields": [
+        {
+          "label": "لینک اتصال",
+          "value": "${LINK_trojan-tls}",
+          "secret": true
+        },
+        {
+          "label": "آدرس",
+          "value": "${DOMAIN}",
+          "secret": false
+        },
+        {
+          "label": "پورت",
+          "value": "8443",
+          "secret": false
+        },
+        {
+          "label": "رمز",
+          "value": "${TROJAN_PW}",
+          "secret": true
+        }
+      ],
+      "files": [],
+      "steps": [
+        "یک کلاینت سازگار با این روش نصب کنید.",
+        "روی «کپی لینک اتصال» بزنید؛ در کلاینت گزینهٔ افزودن یا Import from clipboard را انتخاب کنید.",
+        "پروفایل را انتخاب و متصل شوید؛ اگر برنامه اجازهٔ VPN خواست، تأیید کنید.",
+        "در مرورگر IP خروجی را بررسی کنید؛ برای مسیرهای این سرور باید ${IP} دیده شود."
+      ],
+      "warnings": [],
+      "links": [],
+      "evidence": "فعال بودن سرویس پس از نصب بررسی می‌شود. اتصال کامل از اینترنت و دستگاه شما باید جداگانه آزمایش شود."
+    },
+    {
+      "id": "ss2022",
+      "title": "Shadowsocks · 2022",
+      "group": "direct",
+      "summary": "پروکسی رمزنگاری‌شدهٔ SS-2022",
+      "service": "xray",
+      "port": "8388 / TCP + UDP",
+      "fields": [
+        {
+          "label": "لینک اتصال",
+          "value": "${LINK_ss2022}",
+          "secret": true
+        },
+        {
+          "label": "آدرس",
+          "value": "${IP}",
+          "secret": false
+        },
+        {
+          "label": "پورت",
+          "value": "8388",
+          "secret": false
+        },
+        {
+          "label": "روش رمزنگاری",
+          "value": "${SS_METHOD}",
+          "secret": false
+        },
+        {
+          "label": "کلید",
+          "value": "${SS_KEY}",
+          "secret": true
+        }
+      ],
+      "files": [],
+      "steps": [
+        "کلاینت باید ${SS_METHOD} را پشتیبانی کند؛ هر کلاینت Shadowsocks قدیمی سازگار نیست.",
+        "یک کلاینت سازگار با این روش نصب کنید.",
+        "روی «کپی لینک اتصال» بزنید؛ در کلاینت گزینهٔ افزودن یا Import from clipboard را انتخاب کنید.",
+        "پروفایل را انتخاب و متصل شوید؛ اگر برنامه اجازهٔ VPN خواست، تأیید کنید.",
+        "در مرورگر IP خروجی را بررسی کنید؛ برای مسیرهای این سرور باید ${IP} دیده شود."
+      ],
+      "warnings": [],
+      "links": [],
+      "evidence": "فعال بودن سرویس پس از نصب بررسی می‌شود. اتصال کامل از اینترنت و دستگاه شما باید جداگانه آزمایش شود."
+    },
+    {
+      "id": "hysteria2",
+      "title": "Hysteria 2",
+      "group": "direct",
+      "summary": "انتقال QUIC روی UDP",
+      "service": "sing-box",
+      "port": "443 / UDP",
+      "fields": [
+        {
+          "label": "لینک اتصال",
+          "value": "${LINK_hysteria2}",
+          "secret": true
+        },
+        {
+          "label": "آدرس",
+          "value": "${DOMAIN}",
+          "secret": false
+        },
+        {
+          "label": "پورت",
+          "value": "443",
+          "secret": false
+        }
+      ],
+      "files": [],
+      "steps": [
+        "یک کلاینت سازگار با این روش نصب کنید.",
+        "روی «کپی لینک اتصال» بزنید؛ در کلاینت گزینهٔ افزودن یا Import from clipboard را انتخاب کنید.",
+        "پروفایل را انتخاب و متصل شوید؛ اگر برنامه اجازهٔ VPN خواست، تأیید کنید.",
+        "در مرورگر IP خروجی را بررسی کنید؛ برای مسیرهای این سرور باید ${IP} دیده شود."
+      ],
+      "warnings": [
+        "اگر UDP شبکهٔ شما محدود باشد، ممکن است وصل نشود؛ یک مسیر CDN را هم امتحان کنید."
+      ],
+      "links": [],
+      "evidence": "فعال بودن سرویس پس از نصب بررسی می‌شود. اتصال کامل از اینترنت و دستگاه شما باید جداگانه آزمایش شود."
+    },
+    {
+      "id": "tuic",
+      "title": "TUIC",
+      "group": "direct",
+      "summary": "QUIC با پشتیبانی UDP",
+      "service": "sing-box",
+      "port": "8443 / UDP",
+      "fields": [
+        {
+          "label": "لینک اتصال",
+          "value": "${LINK_tuic}",
+          "secret": true
+        },
+        {
+          "label": "آدرس",
+          "value": "${DOMAIN}",
+          "secret": false
+        },
+        {
+          "label": "پورت",
+          "value": "8443",
+          "secret": false
+        }
+      ],
+      "files": [],
+      "steps": [
+        "یک کلاینت سازگار با این روش نصب کنید.",
+        "روی «کپی لینک اتصال» بزنید؛ در کلاینت گزینهٔ افزودن یا Import from clipboard را انتخاب کنید.",
+        "پروفایل را انتخاب و متصل شوید؛ اگر برنامه اجازهٔ VPN خواست، تأیید کنید.",
+        "در مرورگر IP خروجی را بررسی کنید؛ برای مسیرهای این سرور باید ${IP} دیده شود."
+      ],
+      "warnings": [
+        "کلاینت سازگار TUIC و دسترسی UDP لازم است."
+      ],
+      "links": [],
+      "evidence": "فعال بودن سرویس پس از نصب بررسی می‌شود. اتصال کامل از اینترنت و دستگاه شما باید جداگانه آزمایش شود."
+    },
+    {
+      "id": "anytls",
+      "title": "AnyTLS",
+      "group": "direct",
+      "summary": "پروکسی TLS با کلاینت سازگار",
+      "service": "sing-box",
+      "port": "11443 / TCP",
+      "fields": [
+        {
+          "label": "لینک اتصال",
+          "value": "${LINK_anytls}",
+          "secret": true
+        },
+        {
+          "label": "آدرس",
+          "value": "${DOMAIN}",
+          "secret": false
+        },
+        {
+          "label": "پورت",
+          "value": "11443",
+          "secret": false
+        }
+      ],
+      "files": [],
+      "steps": [
+        "یک کلاینت سازگار با این روش نصب کنید.",
+        "روی «کپی لینک اتصال» بزنید؛ در کلاینت گزینهٔ افزودن یا Import from clipboard را انتخاب کنید.",
+        "پروفایل را انتخاب و متصل شوید؛ اگر برنامه اجازهٔ VPN خواست، تأیید کنید.",
+        "در مرورگر IP خروجی را بررسی کنید؛ برای مسیرهای این سرور باید ${IP} دیده شود."
+      ],
+      "warnings": [
+        "پشتیبانی AnyTLS در همهٔ کلاینت‌ها موجود نیست."
+      ],
+      "links": [],
+      "evidence": "فعال بودن سرویس پس از نصب بررسی می‌شود. اتصال کامل از اینترنت و دستگاه شما باید جداگانه آزمایش شود."
+    },
+    {
+      "id": "naive",
+      "title": "NaiveProxy",
+      "group": "direct",
+      "summary": "پروکسی HTTPS با padding مخصوص Naive",
+      "service": "sing-box",
+      "port": "10443 / TCP",
+      "fields": [
+        {
+          "label": "لینک اتصال",
+          "value": "${LINK_naive}",
+          "secret": true
+        },
+        {
+          "label": "آدرس",
+          "value": "${DOMAIN}",
+          "secret": false
+        },
+        {
+          "label": "پورت",
+          "value": "10443",
+          "secret": false
+        },
+        {
+          "label": "کاربر",
+          "value": "${NAIVE_USER}",
+          "secret": false
+        },
+        {
+          "label": "رمز",
+          "value": "${NAIVE_PW}",
+          "secret": true
+        }
+      ],
+      "files": [
+        "naive-client.json"
+      ],
+      "steps": [
+        "کلاینت رسمی NaiveProxy یا کلاینتی با پشتیبانی واقعی Naive نصب کنید.",
+        "یک کلاینت سازگار با این روش نصب کنید.",
+        "روی «کپی لینک اتصال» بزنید؛ در کلاینت گزینهٔ افزودن یا Import from clipboard را انتخاب کنید.",
+        "پروفایل را انتخاب و متصل شوید؛ اگر برنامه اجازهٔ VPN خواست، تأیید کنید.",
+        "در مرورگر IP خروجی را بررسی کنید؛ برای مسیرهای این سرور باید ${IP} دیده شود."
+      ],
+      "warnings": [
+        "پروکسی HTTPS معمولی یا curl جایگزین NaiveProxy نیست. تست کامل Naive انجام نشده است؛ sing-box ممکن است کتابخانهٔ Cronet لازم داشته باشد."
+      ],
+      "links": [],
+      "evidence": "فعال بودن سرویس پس از نصب بررسی می‌شود. اتصال کامل از اینترنت و دستگاه شما باید جداگانه آزمایش شود."
+    },
+    {
+      "id": "socks",
+      "title": "SOCKS5",
+      "group": "tools",
+      "summary": "پروکسی با نام کاربری و رمز",
+      "service": "sing-box",
+      "port": "1080 / TCP",
+      "fields": [
+        {
+          "label": "لینک اتصال",
+          "value": "${LINK_socks}",
+          "secret": true
+        },
+        {
+          "label": "آدرس",
+          "value": "${IP}",
+          "secret": false
+        },
+        {
+          "label": "پورت",
+          "value": "1080",
+          "secret": false
+        },
+        {
+          "label": "کاربر",
+          "value": "${SOCKS_USER}",
+          "secret": false
+        },
+        {
+          "label": "رمز",
+          "value": "${SOCKS_PW}",
+          "secret": true
+        }
+      ],
+      "files": [],
+      "steps": [
+        "در تنظیمات پروکسی برنامه یا مرورگر، نوع SOCKS5 را انتخاب کنید.",
+        "آدرس، پورت، کاربر و رمز همین کارت را وارد کنید.",
+        "فقط برنامه‌هایی که از آن پروکسی استفاده می‌کنند هدایت می‌شوند؛ این روش به‌تنهایی VPN سراسری نیست."
+      ],
+      "warnings": [
+        "خود SOCKS5 رمزنگاری ندارد؛ ترجیحاً از داخل تونل امن استفاده شود."
+      ],
+      "links": [],
+      "evidence": "فعال بودن سرویس پس از نصب بررسی می‌شود. اتصال کامل از اینترنت و دستگاه شما باید جداگانه آزمایش شود."
+    },
+    {
+      "id": "http",
+      "title": "HTTP Proxy",
+      "group": "tools",
+      "summary": "پروکسی HTTP CONNECT احراز هویت‌شده",
+      "service": "sing-box",
+      "port": "1080 / TCP",
+      "fields": [
+        {
+          "label": "لینک اتصال",
+          "value": "${LINK_http}",
+          "secret": true
+        },
+        {
+          "label": "آدرس",
+          "value": "${IP}",
+          "secret": false
+        },
+        {
+          "label": "پورت",
+          "value": "1080",
+          "secret": false
+        },
+        {
+          "label": "کاربر",
+          "value": "${SOCKS_USER}",
+          "secret": false
+        },
+        {
+          "label": "رمز",
+          "value": "${SOCKS_PW}",
+          "secret": true
+        }
+      ],
+      "files": [],
+      "steps": [
+        "در تنظیمات پروکسی برنامه یا مرورگر، نوع HTTP را انتخاب کنید.",
+        "آدرس، پورت، کاربر و رمز همین کارت را وارد کنید.",
+        "فقط برنامه‌هایی که از آن پروکسی استفاده می‌کنند هدایت می‌شوند؛ این روش به‌تنهایی VPN سراسری نیست."
+      ],
+      "warnings": [
+        "نام کاربری و رمز پروکسی روی اتصال HTTP خام رمزنگاری نمی‌شود. برای شبکهٔ غیرقابل اعتماد مناسب نیست."
+      ],
+      "links": [],
+      "evidence": "فعال بودن سرویس پس از نصب بررسی می‌شود. اتصال کامل از اینترنت و دستگاه شما باید جداگانه آزمایش شود."
+    },
+    {
+      "id": "shadowtls",
+      "title": "ShadowTLS v3 + SS2022",
+      "group": "direct",
+      "summary": "دو لایهٔ ShadowTLS و Shadowsocks با هم",
+      "service": "sing-box",
+      "port": "9443 / TCP",
+      "fields": [
+        {
+          "label": "آدرس",
+          "value": "${IP}",
+          "secret": false
+        },
+        {
+          "label": "SNI",
+          "value": "www.bing.com",
+          "secret": false
+        },
+        {
+          "label": "رمز ShadowTLS",
+          "value": "${STLS_PW}",
+          "secret": true
+        },
+        {
+          "label": "کلید Shadowsocks",
+          "value": "${STLS_SS_KEY}",
+          "secret": true
+        }
+      ],
+      "files": [
+        "sing-box-client.json"
+      ],
+      "steps": [
+        "فایل sing-box-client.json را دانلود و در کلاینتی با پشتیبانی کامل sing-box وارد کنید.",
+        "در بخش انتخاب مسیر، shadowtls را انتخاب کنید؛ هر دو outbound مربوط به shadowtls و shadowtls-out باید موجود باشند.",
+        "فایل آماده یک پروکسی محلی روی 127.0.0.1:2080 ایجاد می‌کند. پروکسی برنامه را روی آن بگذارید؛ فعال‌کردن TUN به تنظیم اضافی کلاینت نیاز دارد."
+      ],
+      "warnings": [
+        "فقط واردکردن رمز ShadowTLS کافی نیست؛ لایهٔ Shadowsocks داخلی هم لازم است."
+      ],
+      "links": [],
+      "evidence": "فعال بودن سرویس پس از نصب بررسی می‌شود. اتصال کامل از اینترنت و دستگاه شما باید جداگانه آزمایش شود."
+    },
+    {
+      "id": "wireguard",
+      "title": "WireGuard",
+      "group": "classic",
+      "summary": "تونل IP؛ کانفیگ آمادهٔ واردکردن",
+      "service": "wg-quick@wg0",
+      "port": "51820 / UDP",
+      "fields": [
+        {
+          "label": "آدرس",
+          "value": "${IP}",
+          "secret": false
+        }
+      ],
+      "files": [
+        "wireguard.conf"
+      ],
+      "steps": [
+        "برنامهٔ WireGuard را نصب کنید.",
+        "فایل wireguard.conf را دانلود کنید؛ افزودن تونل / Import from file را بزنید.",
+        "پروفایل را فعال کنید و درخواست مجوز VPN را تأیید کنید.",
+        "IP خروجی و بازشدن یک سایت را بررسی کنید؛ فایل فعلی برای یک کلاینت است."
+      ],
+      "warnings": [
+        "همین فایل را هم‌زمان روی چند دستگاه استفاده نکنید؛ هر دستگاه بهتر است کلید و آدرس جدا داشته باشد."
+      ],
+      "links": [],
+      "evidence": "فعال بودن سرویس پس از نصب بررسی می‌شود. اتصال کامل از اینترنت و دستگاه شما باید جداگانه آزمایش شود."
+    },
+    {
+      "id": "awg",
+      "title": "AmneziaWG",
+      "group": "classic",
+      "summary": "تونل IP؛ کانفیگ آمادهٔ واردکردن",
+      "service": "awg-quick@awg0",
+      "port": "51821 / UDP",
+      "fields": [
+        {
+          "label": "آدرس",
+          "value": "${IP}",
+          "secret": false
+        }
+      ],
+      "files": [
+        "amneziawg.conf"
+      ],
+      "steps": [
+        "برنامهٔ AmneziaWG یا AmneziaVPN با پشتیبانی فایل AWG را نصب کنید.",
+        "فایل amneziawg.conf را دانلود کنید؛ افزودن تونل / Import from file را بزنید.",
+        "پروفایل را فعال کنید و درخواست مجوز VPN را تأیید کنید.",
+        "IP خروجی و بازشدن یک سایت را بررسی کنید؛ فایل فعلی برای یک کلاینت است."
+      ],
+      "warnings": [
+        "همین فایل را هم‌زمان روی چند دستگاه استفاده نکنید؛ هر دستگاه بهتر است کلید و آدرس جدا داشته باشد.",
+        "این کانفیگ شامل پارامترهای AWG است؛ با WireGuard معمولی سازگار نیست."
+      ],
+      "links": [],
+      "evidence": "فعال بودن سرویس پس از نصب بررسی می‌شود. اتصال کامل از اینترنت و دستگاه شما باید جداگانه آزمایش شود."
+    },
+    {
+      "id": "openvpn-udp",
+      "title": "OpenVPN · UDP",
+      "group": "classic",
+      "summary": "گواهی و کلید داخل فایل OVPN",
+      "service": "openvpn-server@server-udp",
+      "port": "1194 / UDP",
+      "fields": [
+        {
+          "label": "آدرس",
+          "value": "${IP}",
+          "secret": false
+        }
+      ],
+      "files": [
+        "openvpn-udp.ovpn"
+      ],
+      "steps": [
+        "OpenVPN Connect یا کلاینت سازگار OpenVPN را نصب کنید.",
+        "فایل openvpn-udp.ovpn را دانلود و Import کنید.",
+        "فایل شامل گواهی و کلید است؛ برای این پروفایل ورود با نام کاربری تعریف نشده است.",
+        "پروفایل را روشن کنید؛ در صورت مسدود بودن UDP از نسخهٔ TCP استفاده کنید."
+      ],
+      "warnings": [
+        "از این کلید خصوصی محافظت کنید."
+      ],
+      "links": [],
+      "evidence": "فعال بودن سرویس پس از نصب بررسی می‌شود. اتصال کامل از اینترنت و دستگاه شما باید جداگانه آزمایش شود."
+    },
+    {
+      "id": "openvpn-tcp",
+      "title": "OpenVPN · TCP",
+      "group": "classic",
+      "summary": "گواهی و کلید داخل فایل OVPN",
+      "service": "openvpn-server@server-tcp",
+      "port": "1194 / TCP",
+      "fields": [
+        {
+          "label": "آدرس",
+          "value": "${IP}",
+          "secret": false
+        }
+      ],
+      "files": [
+        "openvpn-tcp.ovpn"
+      ],
+      "steps": [
+        "OpenVPN Connect یا کلاینت سازگار OpenVPN را نصب کنید.",
+        "فایل openvpn-tcp.ovpn را دانلود و Import کنید.",
+        "فایل شامل گواهی و کلید است؛ برای این پروفایل ورود با نام کاربری تعریف نشده است.",
+        "پروفایل را روشن کنید؛ در صورت مسدود بودن UDP از نسخهٔ TCP استفاده کنید."
+      ],
+      "warnings": [
+        "از این کلید خصوصی محافظت کنید."
+      ],
+      "links": [],
+      "evidence": "فعال بودن سرویس پس از نصب بررسی می‌شود. اتصال کامل از اینترنت و دستگاه شما باید جداگانه آزمایش شود."
+    },
+    {
+      "id": "ikev2",
+      "title": "IKEv2 / IPsec",
+      "group": "classic",
+      "summary": "احراز هویت با گواهی کلاینت",
+      "service": "ipsec",
+      "port": "500 + 4500 / UDP",
+      "fields": [
+        {
+          "label": "سرور",
+          "value": "${DOMAIN}",
+          "secret": false
+        },
+        {
+          "label": "شناسهٔ سرور / Remote ID",
+          "value": "${DOMAIN}",
+          "secret": false
+        }
+      ],
+      "files": [
+        "allvpn.mobileconfig",
+        "allvpn.sswan",
+        "allvpn.p12"
+      ],
+      "steps": [
+        "اندروید: strongSwan VPN Client را نصب و فایل allvpn.sswan را وارد کنید؛ اگر گواهی خواسته شد allvpn.p12 را وارد کنید.",
+        "iOS و macOS: allvpn.mobileconfig را دانلود و فقط پس از بررسی نام سرور، از تنظیمات دستگاه پروفایل را نصب کنید.",
+        "ویندوز: allvpn.p12 را در مخزن گواهی مناسب کلاینت VPN وارد کنید و VPN از نوع IKEv2 با احراز هویت گواهی بسازید؛ تنظیم مخزن CA و گواهی دستگاه ممکن است لازم شود.",
+        "فایل P12 رمز ندارد؛ در پرسش رمز، خالی بگذارید. آدرس و Remote ID باید با دامنهٔ همین کارت منطبق باشد."
+      ],
+      "warnings": [
+        "این تنظیم IKEv2 مبتنی بر گواهی است؛ کاربر/رمز L2TP را به‌جای گواهی وارد نکنید."
+      ],
+      "links": [],
+      "evidence": "فعال بودن سرویس پس از نصب بررسی می‌شود. اتصال کامل از اینترنت و دستگاه شما باید جداگانه آزمایش شود."
+    },
+    {
+      "id": "l2tp",
+      "title": "L2TP / IPsec",
+      "group": "classic",
+      "summary": "ورود با کلید مشترک و حساب کاربر",
+      "service": "ipsec",
+      "port": "500 + 4500 / UDP",
+      "fields": [
+        {
+          "label": "سرور",
+          "value": "${IP}",
+          "secret": false
+        },
+        {
+          "label": "کاربر",
+          "value": "${VPN_USER}",
+          "secret": false
+        },
+        {
+          "label": "رمز",
+          "value": "${VPN_PW}",
+          "secret": true
+        },
+        {
+          "label": "PSK",
+          "value": "${IPSEC_PSK}",
+          "secret": true
+        }
+      ],
+      "files": [],
+      "steps": [
+        "در کلاینتی که L2TP / IPsec را پشتیبانی می‌کند، یک اتصال تازه بسازید.",
+        "سرور، نام کاربری و رمز را از همین کارت کپی کنید.",
+        "نوع احراز هویت IPsec را Shared secret / PSK قرار دهید و PSK را وارد کنید.",
+        "پس از اتصال، مسیر خروجی را بررسی کنید. UDP 1701 را به‌صورت بدون IPsec استفاده نکنید."
+      ],
+      "warnings": [
+        "پشتیبانی این روش‌های قدیمی در بعضی نسخه‌های جدید سیستم‌عامل حذف شده است."
+      ],
+      "links": [],
+      "evidence": "فعال بودن سرویس پس از نصب بررسی می‌شود. اتصال کامل از اینترنت و دستگاه شما باید جداگانه آزمایش شود."
+    },
+    {
+      "id": "xauth",
+      "title": "IPsec · XAuth",
+      "group": "classic",
+      "summary": "ورود با کلید مشترک و حساب کاربر",
+      "service": "ipsec",
+      "port": "500 + 4500 / UDP",
+      "fields": [
+        {
+          "label": "سرور",
+          "value": "${IP}",
+          "secret": false
+        },
+        {
+          "label": "کاربر",
+          "value": "${VPN_USER}",
+          "secret": false
+        },
+        {
+          "label": "رمز",
+          "value": "${VPN_PW}",
+          "secret": true
+        },
+        {
+          "label": "PSK",
+          "value": "${IPSEC_PSK}",
+          "secret": true
+        }
+      ],
+      "files": [],
+      "steps": [
+        "در کلاینتی که IPsec · XAuth را پشتیبانی می‌کند، یک اتصال تازه بسازید.",
+        "سرور، نام کاربری و رمز را از همین کارت کپی کنید.",
+        "نوع احراز هویت IPsec را Shared secret / PSK قرار دهید و PSK را وارد کنید.",
+        "پس از اتصال، مسیر خروجی را بررسی کنید. UDP 1701 را به‌صورت بدون IPsec استفاده نکنید."
+      ],
+      "warnings": [
+        "پشتیبانی این روش‌های قدیمی در بعضی نسخه‌های جدید سیستم‌عامل حذف شده است."
+      ],
+      "links": [],
+      "evidence": "فعال بودن سرویس پس از نصب بررسی می‌شود. اتصال کامل از اینترنت و دستگاه شما باید جداگانه آزمایش شود."
+    },
+    {
+      "id": "oc",
+      "title": "OpenConnect / AnyConnect",
+      "group": "classic",
+      "summary": "TLS و DTLS؛ سرور ocserv",
+      "service": "ocserv",
+      "port": "4443 / TCP + UDP",
+      "fields": [
+        {
+          "label": "آدرس",
+          "value": "https://${DOMAIN}:4443",
+          "secret": false
+        },
+        {
+          "label": "کاربر",
+          "value": "${OC_USER}",
+          "secret": false
+        },
+        {
+          "label": "رمز",
+          "value": "${OC_PW}",
+          "secret": true
+        }
+      ],
+      "files": [],
+      "steps": [
+        "کلاینت OpenConnect سازگار نصب کنید.",
+        "آدرس کامل شامل https و :4443 را وارد کنید.",
+        "با نام کاربری و رمز همین کارت وارد شوید؛ تأیید گواهی TLS را غیرفعال نکنید.",
+        "VPN را متصل و بازشدن سایت را امتحان کنید."
+      ],
+      "warnings": [],
+      "links": [],
+      "evidence": "فعال بودن سرویس پس از نصب بررسی می‌شود. اتصال کامل از اینترنت و دستگاه شما باید جداگانه آزمایش شود."
+    },
+    {
+      "id": "sstp",
+      "title": "SSTP",
+      "group": "classic",
+      "summary": "سرویس SoftEther با گواهی معتبر",
+      "service": "softether-vpnserver",
+      "port": "5555 / TCP",
+      "fields": [
+        {
+          "label": "سرور",
+          "value": "${DOMAIN}",
+          "secret": false
+        },
+        {
+          "label": "پورت",
+          "value": "5555",
+          "secret": false
+        },
+        {
+          "label": "کاربر",
+          "value": "${SE_USER}",
+          "secret": false
+        },
+        {
+          "label": "رمز",
+          "value": "${SE_PW}",
+          "secret": true
+        }
+      ],
+      "files": [],
+      "steps": [
+        "کلاینت SSTP که پورت سفارشی قبول کند نصب کنید؛ مثلاً Open SSTP Client در اندروید.",
+        "سرور را با پورت 5555 وارد کنید؛ نام کاربر و رمز همین کارت را وارد کنید.",
+        "بررسی گواهی TLS روشن بماند؛ بعد متصل شوید."
+      ],
+      "warnings": [
+        "این سرویس روی 443 نیست؛ اتصال با کلاینتی که پورت 5555 را نپذیرد ممکن نیست."
+      ],
+      "links": [],
+      "evidence": "فعال بودن سرویس پس از نصب بررسی می‌شود. اتصال کامل از اینترنت و دستگاه شما باید جداگانه آزمایش شود."
+    },
+    {
+      "id": "softether",
+      "title": "SoftEther VPN",
+      "group": "classic",
+      "summary": "سرویس SoftEther با گواهی معتبر",
+      "service": "softether-vpnserver",
+      "port": "5555 / TCP",
+      "fields": [
+        {
+          "label": "سرور",
+          "value": "${DOMAIN}",
+          "secret": false
+        },
+        {
+          "label": "پورت",
+          "value": "5555",
+          "secret": false
+        },
+        {
+          "label": "کاربر",
+          "value": "${SE_USER}",
+          "secret": false
+        },
+        {
+          "label": "رمز",
+          "value": "${SE_PW}",
+          "secret": true
+        },
+        {
+          "label": "Virtual Hub",
+          "value": "DEFAULT",
+          "secret": false
+        }
+      ],
+      "files": [],
+      "steps": [
+        "SoftEther VPN Client را نصب و یک Virtual Network Adapter بسازید.",
+        "در New VPN Connection سرور و پورت 5555 را وارد کنید؛ Virtual Hub را DEFAULT قرار دهید.",
+        "Password Authentication را انتخاب و حساب این کارت را وارد کنید.",
+        "متصل شوید و مسیر خروجی را بررسی کنید."
+      ],
+      "warnings": [
+        "این سرویس روی 443 نیست؛ اتصال با کلاینتی که پورت 5555 را نپذیرد ممکن نیست."
+      ],
+      "links": [],
+      "evidence": "فعال بودن سرویس پس از نصب بررسی می‌شود. اتصال کامل از اینترنت و دستگاه شما باید جداگانه آزمایش شود."
+    },
+    {
+      "id": "pptp",
+      "title": "PPTP · قدیمی",
+      "group": "classic",
+      "summary": "فقط برای سازگاری قدیمی؛ توصیه نمی‌شود",
+      "service": "accel-ppp",
+      "port": "1723 / TCP + GRE",
+      "fields": [
+        {
+          "label": "سرور",
+          "value": "${IP}",
+          "secret": false
+        },
+        {
+          "label": "کاربر",
+          "value": "${PPTP_USER}",
+          "secret": false
+        },
+        {
+          "label": "رمز",
+          "value": "${PPTP_PW}",
+          "secret": true
+        }
+      ],
+      "files": [],
+      "steps": [
+        "ترجیحاً به‌جای این روش از WireGuard، OpenVPN یا IKEv2 استفاده کنید.",
+        "فقط برای آزمایش در کلاینت پشتیبان PPTP، سرور و حساب این کارت را وارد کنید.",
+        "اگر اتصال برقرار نشد، GRE هم باید در مسیر شبکه قابل عبور باشد؛ بازبودن TCP به‌تنهایی کافی نیست."
+      ],
+      "warnings": [
+        "PPTP امنیت قابل اتکایی ندارد؛ برای اطلاعات حساس استفاده نکنید."
+      ],
+      "links": [],
+      "evidence": "فعال بودن سرویس پس از نصب بررسی می‌شود. اتصال کامل از اینترنت و دستگاه شما باید جداگانه آزمایش شود."
+    },
+    {
+      "id": "telegram",
+      "title": "MTProto · Telegram",
+      "group": "tools",
+      "summary": "پروکسی فقط برای تلگرام",
+      "service": "mtg",
+      "port": "4433 / TCP",
+      "fields": [
+        {
+          "label": "لینک تلگرام",
+          "value": "${TELEGRAM_URI}",
+          "secret": true
+        },
+        {
+          "label": "لینک وب تلگرام",
+          "value": "${TELEGRAM_WEB}",
+          "secret": true
+        }
+      ],
+      "files": [
+        "telegram-mtproto.txt"
+      ],
+      "steps": [
+        "لینک وب تلگرام را کپی و در مرورگر باز کنید.",
+        "در تلگرام گزینهٔ افزودن / Enable proxy را تأیید کنید.",
+        "راه دستی: Settings → Data and Storage → Proxy → MTProto؛ سرور، پورت و secret را از لینک وارد کنید."
+      ],
+      "warnings": [
+        "این پروکسی کل اینترنت یا مرورگر را پوشش نمی‌دهد."
+      ],
+      "links": [],
+      "evidence": "فعال بودن سرویس پس از نصب بررسی می‌شود. اتصال کامل از اینترنت و دستگاه شما باید جداگانه آزمایش شود."
+    },
+    {
+      "id": "tor",
+      "title": "Tor · obfs4 Bridge",
+      "group": "tools",
+      "summary": "پل خصوصی برای ورود به شبکهٔ Tor",
+      "service": "tor@default",
+      "port": "7443 / TCP",
+      "fields": [
+        {
+          "label": "خط پل برای Tor Browser",
+          "value": "${TOR_BROWSER}",
+          "secret": true
+        },
+        {
+          "label": "خط تنظیم torrc",
+          "value": "${TOR_BRIDGE}",
+          "secret": true
+        }
+      ],
+      "files": [
+        "tor-obfs4-bridge.txt"
+      ],
+      "steps": [
+        "Tor Browser رسمی را نصب کنید.",
+        "در تنظیمات Connection / Bridges گزینهٔ ارائهٔ پل دستی را انتخاب کنید.",
+        "مقدار «خط پل برای Tor Browser» را کپی کنید؛ شامل obfs4، IP، fingerprint و cert است.",
+        "پل را ذخیره و Connect را بزنید."
+      ],
+      "warnings": [
+        "IP خروجی Tor آدرس یکی از خروجی‌های شبکهٔ Tor است، نه الزاماً IP این سرور."
+      ],
+      "links": [],
+      "evidence": "فعال بودن سرویس پس از نصب بررسی می‌شود. اتصال کامل از اینترنت و دستگاه شما باید جداگانه آزمایش شود."
+    },
+    {
+      "id": "ssh",
+      "title": "SSH · SOCKS Tunnel",
+      "group": "tools",
+      "summary": "پروکسی محلی روی تونل SSH",
+      "service": "ssh",
+      "port": "22 / TCP",
+      "fields": [
+        {
+          "label": "سرور",
+          "value": "${DOMAIN}",
+          "secret": false
+        },
+        {
+          "label": "کاربر",
+          "value": "tunnel",
+          "secret": false
+        },
+        {
+          "label": "فرمان اتصال",
+          "value": "ssh -N -D 127.0.0.1:1080 -i ssh-tunnel-key tunnel@${DOMAIN}",
+          "secret": false
+        }
+      ],
+      "files": [
+        "ssh-tunnel-key",
+        "ssh-tunnel-key.pub"
+      ],
+      "steps": [
+        "فایل کلید خصوصی ssh-tunnel-key را دانلود کنید.",
+        "در macOS/Linux روی فایل chmod 600 ssh-tunnel-key اجرا کنید؛ در ویندوز دسترسی فایل را به حساب خود محدود کنید.",
+        "فرمان همین کارت را در پوشهٔ فایل اجرا کنید. در اولین اتصال fingerprint سرور را با بخش اطلاعات سرور مقایسه کنید.",
+        "پروکسی برنامه را SOCKS5 و آدرس 127.0.0.1:1080 بگذارید؛ ترمینال را باز نگه دارید."
+      ],
+      "warnings": [
+        "حساب tunnel برای تونل است؛ شِل تعاملی ندارد."
+      ],
+      "links": [],
+      "evidence": "فعال بودن سرویس پس از نصب بررسی می‌شود. اتصال کامل از اینترنت و دستگاه شما باید جداگانه آزمایش شود."
+    },
+    {
+      "id": "dnstt",
+      "title": "dnstt · DNS Tunnel",
+      "group": "tools",
+      "summary": "مسیر اضطراری، معمولاً کندتر",
+      "service": "dnstt",
+      "port": "53 / UDP (سرور)",
+      "fields": [
+        {
+          "label": "دامنهٔ تونل",
+          "value": "${DNS_TUNNEL}",
+          "secret": false
+        },
+        {
+          "label": "Public key",
+          "value": "${DNSTT_PUBLIC}",
+          "secret": false
+        },
+        {
+          "label": "فرمان لینوکس/macOS",
+          "value": "./dnstt-client-linux -doh https://cloudflare-dns.com/dns-query -pubkey ${DNSTT_PUBLIC} ${DNS_TUNNEL} 127.0.0.1:7000",
+          "secret": false
+        },
+        {
+          "label": "فرمان ویندوز",
+          "value": ".\\dnstt-client.exe -doh https://cloudflare-dns.com/dns-query -pubkey ${DNSTT_PUBLIC} ${DNS_TUNNEL} 127.0.0.1:7000",
+          "secret": false
+        }
+      ],
+      "files": [
+        "dnstt-client-linux",
+        "dnstt-client.exe",
+        "dnstt-client-mac-arm64",
+        "dnstt-server.pub"
+      ],
+      "steps": [
+        "باینری مناسب سیستم را دانلود کنید: Linux x86-64، Windows x86-64 یا macOS ARM64.",
+        "در لینوکس/macOS مجوز اجرا بدهید: chmod +x نام‌فایل. در macOS نام فایل فرمان را با dnstt-client-mac-arm64 جایگزین کنید.",
+        "فرمان را اجرا کنید و برنامه را باز نگه دارید.",
+        "پروکسی برنامه را SOCKS5 روی 127.0.0.1:7000 تنظیم کنید."
+      ],
+      "warnings": [
+        "دسترسی به resolver انتخابی لازم است؛ هیچ resolver در همهٔ شبکه‌ها قابل دسترس نیست. این روش برای دانلود حجیم مناسب نیست."
+      ],
+      "links": [],
+      "evidence": "فعال بودن سرویس پس از نصب بررسی می‌شود. اتصال کامل از اینترنت و دستگاه شما باید جداگانه آزمایش شود."
+    }
+  ],
+  "vault": [
+    {
+      "label": "نام کاربر VPN",
+      "value": "${VPN_USER}",
+      "secret": false
+    },
+    {
+      "label": "رمز VPN / L2TP / XAuth",
+      "value": "${VPN_PW}",
+      "secret": true
+    },
+    {
+      "label": "کلید IPsec PSK",
+      "value": "${IPSEC_PSK}",
+      "secret": true
+    },
+    {
+      "label": "ادمین SoftEther",
+      "value": "${SE_ADMIN_PW}",
+      "secret": true
+    },
+    {
+      "label": "UUID عمومی پروفایل‌ها",
+      "value": "${UUID}",
+      "secret": true
+    },
+    {
+      "label": "کلید خصوصی REALITY",
+      "value": "${REALITY_PRIV}",
+      "secret": true
+    },
+    {
+      "label": "کلید عمومی REALITY",
+      "value": "${REALITY_PUB}",
+      "secret": false
+    },
+    {
+      "label": "Short ID",
+      "value": "${REALITY_SID}",
+      "secret": true
+    },
+    {
+      "label": "رمز Hysteria2",
+      "value": "${HY2_PW}",
+      "secret": true
+    },
+    {
+      "label": "UUID TUIC",
+      "value": "${TUIC_UUID}",
+      "secret": true
+    },
+    {
+      "label": "رمز TUIC",
+      "value": "${TUIC_PW}",
+      "secret": true
+    },
+    {
+      "label": "رمز AnyTLS",
+      "value": "${ANYTLS_PW}",
+      "secret": true
+    },
+    {
+      "label": "DOMAIN",
+      "value": "${DOMAIN}",
+      "secret": false
+    },
+    {
+      "label": "CDN",
+      "value": "${CDN}",
+      "secret": false
+    },
+    {
+      "label": "IP",
+      "value": "${IP}",
+      "secret": false
+    },
+    {
+      "label": "REALITY_SNI",
+      "value": "${REALITY_SNI}",
+      "secret": false
+    },
+    {
+      "label": "WS_VLESS",
+      "value": "${WS_VLESS}",
+      "secret": false
+    },
+    {
+      "label": "XH_VLESS",
+      "value": "${XH_VLESS}",
+      "secret": false
+    },
+    {
+      "label": "WS_VMESS",
+      "value": "${WS_VMESS}",
+      "secret": false
+    },
+    {
+      "label": "WS_TROJAN",
+      "value": "${WS_TROJAN}",
+      "secret": false
+    },
+    {
+      "label": "TROJAN_PW",
+      "value": "${TROJAN_PW}",
+      "secret": true
+    },
+    {
+      "label": "SS_METHOD",
+      "value": "${SS_METHOD}",
+      "secret": false
+    },
+    {
+      "label": "SS_KEY",
+      "value": "${SS_KEY}",
+      "secret": true
+    },
+    {
+      "label": "STLS_PW",
+      "value": "${STLS_PW}",
+      "secret": true
+    },
+    {
+      "label": "STLS_SS_KEY",
+      "value": "${STLS_SS_KEY}",
+      "secret": true
+    },
+    {
+      "label": "NAIVE_USER",
+      "value": "${NAIVE_USER}",
+      "secret": false
+    },
+    {
+      "label": "NAIVE_PW",
+      "value": "${NAIVE_PW}",
+      "secret": true
+    },
+    {
+      "label": "SOCKS_USER",
+      "value": "${SOCKS_USER}",
+      "secret": false
+    },
+    {
+      "label": "SOCKS_PW",
+      "value": "${SOCKS_PW}",
+      "secret": true
+    },
+    {
+      "label": "PPTP_USER",
+      "value": "${PPTP_USER}",
+      "secret": false
+    },
+    {
+      "label": "PPTP_PW",
+      "value": "${PPTP_PW}",
+      "secret": true
+    },
+    {
+      "label": "OC_USER",
+      "value": "${OC_USER}",
+      "secret": false
+    },
+    {
+      "label": "OC_PW",
+      "value": "${OC_PW}",
+      "secret": true
+    },
+    {
+      "label": "SE_USER",
+      "value": "${SE_USER}",
+      "secret": false
+    },
+    {
+      "label": "SE_PW",
+      "value": "${SE_PW}",
+      "secret": true
+    }
+  ],
+  "notes": [
+    "این پنل فقط اطلاعات اتصال را نمایش می‌دهد؛ ساخت یا حذف کاربر و تغییر سرویس‌ها ندارد.",
+    "وضعیت روشن بودن سرویس با موفقیت اتصال از اینترنت شما فرق دارد.",
+    "همهٔ روش‌ها پشت CDN نیستند: فقط کارت‌های دستهٔ Cloudflare از پروکسی Cloudflare می‌گذرند.",
+    "فایل‌های این پنل حاوی کلید خصوصی‌اند؛ دانلودها را عمومی نکنید."
+  ]
+}

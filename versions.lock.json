@@ -1,0 +1,30 @@
+{
+  "xray": "v26.10.21",
+  "sing_box": "v1.14.3",
+  "mtg": "v2.2.8",
+  "amneziawg_go": "b5928efb6ca19f0153958460c3d141f04abc5c2e",
+  "amneziawg_tools": "ee0f0a9aa34ff0a0da4b3433b9512781cfe02843",
+  "dnstt": "0c5c52a57d899c05428c116898941761a2ed83c2",
+  "accel_ppp": "b8a3c54aa34434312aa0053686ec37a133fb54e6",
+  "softether": "ed17437af9719ac66acab30faa29e375d613c35f",
+  "ipsec": "0ed9d3b1e23dac59d98ee8c6d0f2f4951c330258",
+  "vpn_extras": "0da776d69be0a8318d69c6b79791991b59d53781",
+  "go": {
+    "url": "https://go.dev/dl/go1.27.3.linux-amd64.tar.gz",
+    "sha256": "65efbc80fdc1fa2cd2631cad5b481777a68e8725f34e89f50fc6ac714e379b40"
+  },
+  "assets": {
+    "xray": {
+      "url": "https://github.com/XTLS/Xray-core/releases/download/v26.10.21/Xray-linux-64.zip",
+      "sha256": "0eec3ed4163c273d8c8bf821f7d219e257921cf584aa3fb970715e458e631978"
+    },
+    "sing_box": {
+      "url": "https://github.com/SagerNet/sing-box/releases/download/v1.14.3/sing-box-1.14.3-linux-amd64.tar.gz",
+      "sha256": "e2bdf179c15a3652955dc44867e33ca0965c9c9b91b34267dcc5a5d639a5feee"
+    },
+    "mtg": {
+      "url": "https://github.com/9seconds/mtg/releases/download/v2.2.8/mtg-2.2.8-linux-amd64.tar.gz",
+      "sha256": "7ef19d079d85f4e00d4f8334ec1f3f3c8718e3d0ed1f3109ea9a8673138a2102"
+    }
+  }
+}

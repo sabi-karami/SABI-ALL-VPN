@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+.env
+secrets.env
+*private*.zip
+*private*.tgz
+panel-access.txt
+auth.json
+login-credentials.json
+cloudflare.token
+certbot-cloudflare.ini
+aws-state.json
+*.p12
+*.key
+*.pem
+*.ovpn
+.venv/
