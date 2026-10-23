@@ -57,6 +57,7 @@ for file in "$REPO"/modules/*.sh; do
  touch "/var/lib/sabi-allvpn/done/$name"
  echo "DONE $name $(date -Is)"
 done
+python3 "$REPO/scripts/export_private.py"
 python3 "$REPO/scripts/doctor.py"
 python3 "$REPO/scripts/export_private.py"
 echo 'INSTALLATION_COMPLETE. Credentials: /root/allvpn/panel-access.txt; ZIP: /root/allvpn/export/allvpn-private.zip'

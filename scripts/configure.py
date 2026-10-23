@@ -47,6 +47,8 @@ if not re.fullmatch(r'[A-Za-z0-9_.-]{1,32}',cfg['PANEL_USER']):raise ValueError(
 for k in ['ENABLE_PPTP','ENABLE_PLAIN_PROXY']:
  if cfg[k] not in ['yes','no']:raise ValueError(k+' must be yes/no')
 if cfg['DNS_MODE'] not in ['manual','cloudflare']:raise ValueError('Invalid DNS mode')
+cfg.setdefault('REGION','VPS')
+cfg.setdefault('INSTANCE_ID','Dedicated host')
 cfg['PANEL_PORT']='9444'
 (C/'install.env').write_text('\n'.join(f'export {k}={shlex.quote(str(v))}' for k,v in cfg.items())+'\n');os.chmod(C/'install.env',0o600)
 (C/'config.json').write_text(json.dumps(cfg,indent=2));os.chmod(C/'config.json',0o600)

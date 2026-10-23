@@ -174,6 +174,7 @@ Match User tunnel
   X11Forwarding no
   PermitTTY no
   ForceCommand /usr/sbin/nologin
+Match all
 EOF
 chmod 644 /etc/ssh/sshd_config.d/50-tunnel.conf
 sshd -t

@@ -6,6 +6,8 @@ Implemented automated checks:
 - Bash syntax for all shell files.
 - Python parsing for all Python files.
 - Core JSON heredoc rendering with synthetic credentials.
+- Generated Xray and sing-box server configs were accepted by the installed pinned-version binaries in config-check mode (no listeners started).
+- Synthetic catalog rendering verifies every placeholder resolves.
 - 30-card template shape and per-card instructions.
 - No live-identity/credential material expected in public source.
 - No shell xtrace in runtime modules.
